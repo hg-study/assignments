@@ -11,7 +11,7 @@ git 다운로드 ⭢ cmd 오픈 ⭢ git 버전 확인 `git -v`
 <br>
 
 **전역(글로벌) 설정**
-> 
+
 > 내 pc에서 git 저장소 사용 시 github commit user 정보를 공통으로 적용할 때 사용되며, 전역 사용자 정보 및 환경설정을 정의한다. 이는 ~/.gitconfig에 저장된다.
 
 <br>
