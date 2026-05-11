@@ -1,9 +1,10 @@
-# Git_Theory
+# Theory
 
 ### Git 정의
 
 > Git은 분산 버전 관리 시스템(DVCS,Distributed Version Control System)으로 소스 코드의 변경사항을 추적하고 **개발자들이 협업할 수 있도록 돕는 기구**다. 주로 소프트웨어 개발에 사용되지만, 버전 관리를 필요로 하는 모든 프로젝트에 사용할 수 있다.
 
+<br>
 
 #### **Git 주요 기능**
 
