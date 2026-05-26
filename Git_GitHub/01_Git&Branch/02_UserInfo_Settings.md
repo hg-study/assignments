@@ -58,7 +58,7 @@ git config --list
 
 **전역 설정 삭제 명령어**
 ```jsx
-// 전역 설정 초기화
+// 지역 설정 초기화
 rm -rf .git/config
 
 // 특정 설정 삭제
