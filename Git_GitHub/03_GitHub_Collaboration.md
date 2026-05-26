@@ -1,4 +1,4 @@
-# GitHub Collaboration
+# GitHub_Collaboration
 
 ### GitHub 협업
 
