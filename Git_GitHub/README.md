@@ -32,3 +32,11 @@
 > github 협업 방법 - Organization 생성 및 설정
 
 - [GitHub 협업](./03_GitHub_Collaboration.md)
+
+
+<br>
+
+### 04_Sourcetree
+> Sourcetree 사용법
+
+- [Sourcetree 가이드](./04_Sourcetree/01_Sourcetree_Guide.md)
