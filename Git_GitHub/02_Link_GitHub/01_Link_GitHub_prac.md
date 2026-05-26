@@ -1,4 +1,4 @@
-# GitHub 실습: 원격 저장소(Remote) 연동
+# GitHub 기초 실습: 원격 저장소(Remote) 연동
 
 GitHub 원격 저장소를 생성하고, 로컬 저장소와 연결하여 `Clone`, `Push`, `Pull` 해본다.
 
