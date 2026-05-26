@@ -1,4 +1,4 @@
-# 01_Link_GitHub_Command
+# Link_GitHub_Command
 
 ### GitHub Remote repository 연동
 > GitHub에 로그인 후 리포지토리를 생성하고 로컬에 연동한다. 이를 통해 효과적으로 데이터를 관리하거나 협업할 수 있다.
