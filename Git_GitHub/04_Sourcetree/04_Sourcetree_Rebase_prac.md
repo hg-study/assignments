@@ -1,4 +1,4 @@
-# Soucetree_Rebase_prac
+# Sourcetree_Rebase_prac
 
 ### Sourcetree Rebase 실습
 > sourcetree에서 재배치를 통해 커밋 내역을 깔끔하게 정리해본다. <br>
