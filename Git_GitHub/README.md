@@ -37,6 +37,7 @@
 <br>
 
 ### 04_Sourcetree
-> Sourcetree 사용법
+> Sourcetree 사용법 & GitFlow 협업
 
 - [Sourcetree 가이드](./04_Sourcetree/01_Sourcetree_Guide.md)
+- [GitFlow 정의, 흐름](./04_Sourcetree/02_GitFlow.md)
