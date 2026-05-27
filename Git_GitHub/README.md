@@ -41,3 +41,4 @@
 
 - [Sourcetree 가이드](./04_Sourcetree/01_Sourcetree_Guide.md)
 - [GitFlow 정의, 흐름](./04_Sourcetree/02_GitFlow.md)
+- [Sourcetree GitFlow 실습](./04_Sourcetree/03_Soucetree_GitFlow_prac.md)
