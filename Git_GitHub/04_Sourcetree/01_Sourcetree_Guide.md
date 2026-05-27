@@ -95,5 +95,5 @@ clone 탭에서 gitHub 경로, 저장 폴더를 작성하고 `클론`을 클릭�
 
 하고 남은 브랜치는 전부 강제삭제처리
 
-![01_Sourcetree_image](../../.github/images/01_Sourcetree_image.png)
+![01_Sourcetree_image](../../.github/images/Sourcetree/01_Sourcetree_image.png)
 
