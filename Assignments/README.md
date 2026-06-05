@@ -48,3 +48,10 @@
 > 영양진단 서비스에 대한 Revision History, Menu Structure, List of screen, Process, Flow Chart, Permission, Policy, UI 상세 구조 작성
 
 - [스토리보드 ppt](./02_UI_Design/01_StoryBoard_task.pdf)
+
+<br>
+
+---
+
+<br>
+
