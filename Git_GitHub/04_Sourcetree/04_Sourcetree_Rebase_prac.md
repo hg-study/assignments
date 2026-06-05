@@ -119,6 +119,7 @@ dev 더블클릭해 브랜치 위치 옮기고 `깃플로우...` 버튼 클릭 �
 **func 커밋**
 
 func2도 동일하게 생성하고 한 번씩 커밋한다. 
+
 ![func1 커밋](../../.github/images/Rebase/15_Rebase_image.png)
 
 <br>
