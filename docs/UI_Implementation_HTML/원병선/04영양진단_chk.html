@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>영양진단 설문조사</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        header {
+            padding: 16px 0;
+            font-size: 36px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-weight: 700;
+            text-align: center;
+            z-index: 2;
+            background-color: white;
+            border-bottom: 1px solid;
+        }
+
+        .main-header {
+            padding: 16px;
+            font-size: 30px;
+            left: 0;
+            top: 0;
+            font-weight: 600;
+            text-align: center;
+            z-index: 2;
+            background-color: white;
+            margin: 15px;
+
+        }
+
+        .survey-table {
+            width: 1329px;
+            border-collapse: separate;
+
+            margin: 20px auto 0;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0;
+        }
+
+        .table-container {
+            width: 1329px;
+            margin: 20px auto;
+
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgb(148, 143, 6);
+        }
+
+        .survey-table th,
+        .survey-table td {
+            border: 1px solid rgb(148, 143, 6);
+            padding: 12px;
+            text-align: center;
+        }
+
+        .survey-table th {
+            background-color: rgb(148, 143, 6);
+        }
+
+        .question {
+            text-align: left !important;
+            width: 40%;
+        }
+
+        .custom-checkbox input {
+            display: none;
+        }
+
+        .custom-checkbox .icon-checked {
+            display: none;
+        }
+
+        .custom-checkbox .icon-unchecked {
+            display: inline-block;
+            color: #ccc;
+        }
+
+        .custom-checkbox input:checked~.icon-unchecked {
+            display: none;
+        }
+
+        .custom-checkbox input:checked~.icon-checked {
+            display: inline-block;
+            color: blue;
+        }
+
+        .custom-checkbox {
+            cursor: pointer;
+            display: inline-flex;
+        }
+
+        footer {
+            border-top: 1px solid;
+            text-align: center;
+            color: rgb(148, 143, 6);
+            font-size: 36px;
+            padding: 23px 0 23px 0;
+            margin-top: 100px;
+        }
+
+        .submit-btn {
+            color: rgb(148, 143, 6);
+            border: none;
+            background-color: white;
+            font-size: 36px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>뉴트릿 영양진단 서비스</header>
+    <div class="main-header">식습관 및 식행동</div>
+    <div class="table-container">
+        <table class="survey-table">
+            <thead>
+                <tr>
+                    <th>문항</th>
+                    <th>전혀 아니다</th>
+                    <th>아니다</th>
+                    <th>보통이다</th>
+                    <th>그렇다</th>
+                    <th>매우 그렇다</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="question">1. 라면 등 인스턴트 면류를 자주 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q1" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q1" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q1" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q1" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q1" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">2. 충동적으로 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q2" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q2" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q2" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q2" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q2" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">3. 불안하거나 긴장했을 때 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q3" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q3" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q3" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q3" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q3" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">4. 먹지 말아야지 하면서도 계속 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q4" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q4" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q4" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q4" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q4" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">5. 햄, 소시지 등 육가공품은 자주 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q5" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q5" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q5" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q5" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q5" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">6. 음식이 싱거우면 소금이나 간장을 더 넣어 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q6" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q6" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q6" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q6" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q6" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">7. 배가 부를 때 식사를 멈출 수 있습니까></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q7" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q7" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q7" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q7" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q7" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">8. 패스트푸드를 일주일에 2회 이상 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q8" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q8" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q8" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q8" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q8" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">9. 일주일에 5회 이상 아침식사를 합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q9" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q9" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q9" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q9" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q9" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">10. 젓갈이나 장아찌가 식탁에 없으면 섭섭함으 느낍니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q10" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q10" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q10" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q10" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q10" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">11. 과식할 때 탄수화물이 많이 든 식품을 많이 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q11" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q11" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q11" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q11" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q11" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">12. 튀김, 볶음, 샐러드 드레싱 등 기름이 많은 음식을 자주 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q12" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q12" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q12" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q12" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q12" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">13. 열등감과 불만족하다고 느낄 때 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q13" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q13" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q13" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q13" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q13" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">14. 짠 과자를 좋아합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q14" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q14" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q14" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q14" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q14" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">15. 스트레스를 많이 받으면 맛있는 음식을 먹어야 겠다는 생각이 듭니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q15" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q15" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q15" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q15" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q15" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">16. 다이어트를 하려고 마음먹었으나, 시도를 실패한 적이 있습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q16" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q16" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q16" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q16" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q16" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">17. 국, 찌개, 면 종류의 국물을 남깁니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q17" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q17" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q17" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q17" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q17" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">18. 육류를 좋아합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q18" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q18" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q18" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q18" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q18" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">19. 배가 고프지 않으면, 식사를 하지 않습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q19" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q19" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q19" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q19" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q19" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">20. 배고프지 않아도 습관적으로 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q20" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q20" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q20" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q20" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q20" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">21. 목이 마르면 물보다 탄산음료, 비타민 음료, 과일주스를 마십니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q21" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q21" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q21" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q21" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q21" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">22. 우울하거나 불행하다고 느낄 때 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q22" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q22" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q22" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q22" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q22" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">23. 외식(직원식당 제외)시 자주 과식을 합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q23" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q23" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q23" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q23" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q23" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">24. 저녁 식사 대신에 라면, 빵, 피자, 치킨 등을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q24" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q24" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q24" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q24" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q24" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">25. 보통 사람들보다 식사행동을 잘 조절하지 못한다고 느껴집니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q25" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q25" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q25" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q25" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q25" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">26. 단 음식을 먹으면 마음이 진정되는 것을 느낍니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q26" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q26" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q26" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q26" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q26" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">27. 음식을 먹고 난 후에 많이 먹었다고 후회하거나 우울함을 느낍니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q27" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q27" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q27" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q27" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q27" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">28. 간이 짭짤하게 베인 조림류를 좋아합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q28" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q28" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q28" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q28" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q28" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">29. 일주일에 3회 이상 식사를 거릅니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q29" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q29" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q29" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q29" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q29" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">30. 화가 날 때 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q30" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q30" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q30" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q30" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q30" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">31. 국물 있는 면류(라면, 국수, 우동 등)을 자주 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q31" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q31" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q31" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q31" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q31" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">32. 평상시 외식(직원 식당 제외)을 1주일에 2회 정도 합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q32" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q32" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q32" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q32" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q32" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">33. 내가 계획했던 것보다 많은 양의 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q33" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q33" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q33" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q33" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q33" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">34. 평소 국, 찌개나 탕류가 있어야 밥을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q34" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q34" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q34" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q34" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q34" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">35. 점심 식사량이 많은 경우 저녁식사는 건너뛰게 됩니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q35" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q35" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q35" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q35" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q35" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">36. 평소 과식을 자주 합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q36" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q36" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q36" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q36" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q36" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">37. 짜게 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q37" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q37" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q37" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q37" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q37" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">238. 기름진 음식을 좋아합니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q38" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q38" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q38" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q38" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q38" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">39. 따분할 때 음식을 먹습니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q39" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q39" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q39" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q39" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q39" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+                <tr>
+                    <td class="question">40. 당분이 들어 있는 식품을 매일 드십니까?</td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q40" value="1"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q40" value="2"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q40" value="3"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q40" value="4"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                    <td><label class="custom-checkbox"><input type="radio" name="q40" value="5"><span
+                                class="material-symbols-outlined icon-unchecked">circle</span><span
+                                class="material-symbols-outlined icon-checked">check_circle</span></label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+            <button class="submit-btn">
+            <a class="submit-btn"  style="text-decoration: none;" href="../박한결/05영양진단_결과.html">식습관 진단 받기</a>
+        </button>
+    </footer>
+
+
+</body>
+
+</html>

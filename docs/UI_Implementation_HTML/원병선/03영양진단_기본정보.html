@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴트릿 영양진단 기본정보</title>
+    <style>
+        header {
+            padding: 16px 0;
+            font-size: 36px;
+            /* position: fixed; */
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-weight: 700;
+            text-align: center;
+            z-index: 2;
+            background-color: white;
+            border-bottom: 1px solid;
+        }
+
+        .main-header {
+            padding: 16px;
+            font-size: 28px;
+            left: 0;
+            top: 0;
+            text-align: center;
+            z-index: 2;
+            background-color: white;
+            margin: 15px;
+
+        }
+
+        .inner-box {
+
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding-left: 15px;
+            border: 1px solid;
+            height: 136px;
+            width: 600px;
+            margin: 0 auto;
+            border-radius: 20px;
+            border-color: #dcdcdc;
+            font-size: 24px;
+            font-weight: 600;
+
+
+
+        }
+
+        .name-input {
+            width: 184px;
+
+            padding: 12px 15px;
+
+            margin-left: 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+        .inner-box2 {
+            width: 600px;
+            height: 482px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin: 0 auto;
+            margin-bottom: 70px;
+        }
+
+        .box-group2-header {
+            font-size: 36px;
+            margin: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box-group2-text {
+            font-size: 21px;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+
+        footer {
+            border-top: 1px solid;
+            text-align: center;
+            color: rgb(148, 143, 6);
+            font-size: 36px;
+            padding: 23px 0 23px 0;
+        }
+
+        .submit-btn {
+            color: rgb(148, 143, 6);
+            border: none;
+            background-color: white;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .custom-hr {
+            width: 600px;
+            border: 0;
+            border-top: 1px solid #dcdcdc;
+            margin: 15px auto;
+
+        }
+
+        .inner-box2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            width: 600px;
+            height: 532px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+            border: 1px solid #dcdcdc;
+            border-radius: 20px;
+            background-color: #fff;
+
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 600px;
+            height: 532px;
+            border: 2px solid white;
+            margin: 40px auto;
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>뉴트릿 영양 진단 설문</header>
+    <div class="main-header">영양 설문을 시작하기 전에 이름을 입력해주세요!</div>
+    <div class="box-group">
+        <section class="inner-box">
+            <label for="user-name" style="display: block; margin-bottom: 10px;">이름 또는 닉네임
+                <strong style="color: rgb(148, 143, 6);">*</strong>
+            </label>
+            <input type="text" id="user-name" class="name-input" placeholder="ex.홍길동">
+        </section>
+        <div class="box-group2">
+            <section class="box-group2-header">
+                <strong>기본정보</strong>
+            </section>
+            <hr class="custom-hr">
+            <section class="box-group2-text">
+                개인별<strong style="color: rgb(148, 143, 6);"> 영양소 섭취 권장량</strong>을 알기 위한 정보를 선택해주세요.
+            </section>
+            <section class="grid-container">
+                <div class="grid-item"><strong>성별</strong>
+                    <input type="text" id="user-name1" class="name-input" placeholder="남, 여"></div>
+                <div class="grid-item"><strong>만 나이</strong>
+                    <input type="text" id="user-name2" class="name-input" placeholder="ex.16"></div>
+                <div class="grid-item"><strong>키</strong>
+                    <input type="text" id="user-name3" class="name-input" placeholder="ex.180cm"></div>
+                <div class="grid-item"><strong>몸무게</strong>
+                    <input type="text" id="user-name4" class="name-input" placeholder="ex.75kg"></div>
+            </section>
+        </div>
+
+    </div>
+
+    <footer>
+            <button class="submit-btn">
+            <a class="submit-btn"  style="text-decoration: none;" href="04영양진단_chk.html">다음</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

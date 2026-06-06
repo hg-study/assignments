@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴트릿</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=bookmark" />
+
+    <style>
+        .material-symbols-outlined {
+            color: #918c00;
+            font-size: 18px;
+            display: inline-block;
+            transform: translateY(3px);
+        }
+    </style>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .triangle-down {
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid black;
+            position: absolute;
+            top: 8px;
+            right: 5px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1c1c1c;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .wrapper {
+            width: 100%;
+            max-width: 100%;
+            /* height: 1430px; */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Layout-header */
+        .wrapper>header>.top-header>.menu {
+            /* border:1px solid; */
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: right;
+        }
+
+        .wrapper>header>nav {
+            flex-direction: column;
+            margin: 0 auto;
+            display: flex;
+            padding: 0;
+        }
+
+        .wrapper>header>.top-header>.menu>li>a {
+            display: block;
+            font-size: 14px;
+            color: #1c1c1c;
+        }
+
+        .wrapper>header>.top-header>ul>li {
+            display: inline-block;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .wrapper>header>.top-header>ul>li+li {
+            border-left: 1px solid;
+            /* border: 1px solid; */
+            color: #888888;
+            margin-top: 15px;
+        }
+
+        .wrapper>header>nav {
+            width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .nav-top {
+            position: relative;
+            width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .wrapper>header>nav>.nav-top>.left>img {
+            width: 180px;
+            /* border: 1px solid; */
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            float: left;
+
+        }
+
+        .wrapper>header>nav>.nav-top>.left-menu {
+            display: flex;
+            align-items: center;
+            float: left;
+            width: 220px;
+            height: 50px;
+            margin-top: 23px;
+            border-radius: 25px;
+            background-color: #eaeaea;
+
+        }
+
+        .wrapper>header>nav>.nav-top>.left-menu>.on {
+            width: 55%;
+            font-weight: bold;
+            color: white;
+            background-color: #918c00;
+            border-radius: 25px;
+            font-size: 20px;
+            line-height: 50px;
+            position: relative;
+            text-align: center;
+        }
+
+        .wrapper>header>nav>.nav-top>.left-menu>.off {
+            position: relative;
+            width: 50%;
+            line-height: 50px;
+            font-size: 20px;
+            color: #929292;
+            text-align: center;
+
+        }
+
+        .wrapper>header>nav>.nav-top>.nav-right {
+            display: flex;
+            position: relative;
+            margin: 20px 13px 0 0;
+            float: right;
+            align-items: center;
+        }
+
+        .wrapper>header>nav>.nav-top>.nav-right>.serach>a {
+            position: absolute;
+            right: 210px;
+            top: 18px;
+            width: 55px;
+            height: 55px;
+        }
+
+        .search-input {
+            left: 35px;
+            width: 390px;
+            border: 1px solid #b2ac00;
+            display: flex;
+            position: relative;
+            font-size: 1rem;
+            padding: 18px;
+            outline: none;
+        }
+
+        .wrapper>header>nav>.nav-top>.nav-right>.right-logo>img {
+            margin-top: 3px;
+            margin-left: 65px;
+            cursor: pointer;
+        }
+
+        .cart {
+            display: inline-block;
+            position: relative;
+            margin: -2px 0 0 30px;
+            vertical-align: bottom;
+        }
+
+        #carCnt {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            min-width: 23px;
+            height: 23px;
+            line-height: 23px;
+            background-color: #918c00;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 100%;
+        }
+
+        .wrapper>header>nav>.nav-bottom {
+            position: relative;
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul {
+            display: flex;
+            justify-content: start;
+            padding: 20px;
+            gap: 50px;
+            margin-top: -30px;
+            width: 110%;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li {
+            font-size: 1rem;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li>a {
+            font-size: 20px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li>a:hover {
+            color: #918c00;
+        }
+
+        /* sitemenu css */
+        #sitemenu {
+            display: flex;
+            position: relative;
+        }
+
+        #sitemenu>input[type="checkbox"] {
+            display: none;
+        }
+
+        #sitemenu>label {
+            cursor: pointer;
+        }
+
+        #sitemenu>label>span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            margin: 5px;
+            background-color: gray;
+            transition: .4s;
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(1) {
+            transform: translate(0px, 8px) rotate(45deg);
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(2) {
+            visibility: hidden;
+            transition: 0s;
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(3) {
+            transform: translate(0px, -8px) rotate(-45deg);
+        }
+
+        #sitemenu>.site-block {
+            border: 2px solid;
+            position: absolute;
+            top: 50px;
+            width: 1100px;
+            height: 50vh;
+            z-index: 1;
+            left: 0%;
+            margin: 0 auto;
+            background-color: white;
+            display: none
+        }
+
+        #sitemenu>input[type="checkbox"]:checked~.site-block {
+            display: block;
+        }
+
+        #sitemenu>.site-block {
+            border: 1px solid;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 1100px;
+            height: auto;
+            min-height: 400px;
+            padding: 40px;
+            z-index: 100;
+            background-color: white;
+            display: none;
+            border: 2px solid;
+        }
+
+        /* category css */
+        .category-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-right: 30px;
+        }
+
+        .category-bar {
+            width: 100%;
+            margin-top: -130px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .category-bar img {
+            max-width: 600px;
+            height: auto;
+            display: block;
+        }
+
+        .category-container-1 {
+            flex: 1;
+        }
+
+        .category-container-1>h3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c1c1c;
+            width: 90%;
+        }
+
+        .tip-txt {
+            color: red;
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+
+        .category-container-1>ul>li {
+            margin-bottom: 12px;
+        }
+
+        .category-container-1>ul>li>a {
+            font-size: 0.95rem;
+            color: #1c1c1c;
+            transition: color 0.2s;
+        }
+
+        .category-container-1>ul>li>a:hover {
+            color: #918c00;
+            font-weight: bold;
+        }
+
+        .padding {
+            padding: 0;
+        }
+
+        /* Layout-main */
+        .wrapper>main>.main {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .wrapper>main>.main>.bottom-banner {
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper>main>.main>.bottom-banner>.list {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .wrapper>main>.main>.bottom-banner>.list>img {
+            width: 100%;
+            height: auto;
+            display: block;
+
+
+        }
+
+        .footer-hd {
+            background-color: #f9f9f9;
+            padding: 40px 0 70px;
+            height: 352px;
+            bottom: 0;
+        }
+
+        .footer-hd-inner {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-item {
+            display: flex;
+            gap: 5px;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+            color: #1c1c1c;
+        }
+
+        .footer-item>li+li::before {
+            content: "|";
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        .footer-left {
+            float: left;
+        }
+
+        .support {
+            margin: 34px 0 25px;
+        }
+
+        .support>.support-title {
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 600;
+        }
+
+        .support-tel {
+            display: block;
+            margin: 5px 0 15px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #918c00;
+        }
+
+        .support>.support-desc {
+            line-height: 29px;
+            font-size: 16px;
+            color: #888;
+        }
+
+        .footer-left>.sns {
+            display: flex;
+            position: relative;
+            gap: 30px;
+            margin: 0 -40px;
+
+        }
+
+        .footer-left>.sns>li>a>img {
+            width: 50px;
+            height: 50px;
+            margin-top: -10px;
+
+
+        }
+
+        .footer-right {
+            position: relative;
+            float: right;
+            /* border: 1px solid; */
+            /* width:610px; */
+
+        }
+
+        .footer-right>.company {
+            margin: 60px 0 10px;
+            /* border:1px solid; */
+        }
+
+        .footer-right>.company>.company-name {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .footer-right>.company>.company-info {
+            line-height: 27px;
+            font-size: 15px;
+            color: #888;
+        }
+
+        .footer-right>.company>.company-info2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #888;
+            margin: -10px;
+
+        }
+
+        .slider-block {
+            width: 100%;
+            max-width: 1990px;
+            height: 391px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-block>.slider-wrapper {
+            width: 1990px;
+            height: 390px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 70px;
+            position: relative;
+            transition: .5s;
+        }
+
+        .slider-block>.slider-wrapper>.items {
+            width: 500px;
+            height: 390px;
+        }
+
+        .items>img {
+            object-fit: cover;
+        }
+
+        .slider-block>label {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 12.5px);
+            z-index: 5;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .slider-block>label>span {
+            color: black;
+        }
+
+        .slider-block>label.prev {
+            left: 3px;
+        }
+
+        .slider-block>label.next {
+            right: 3px;
+        }
+
+        .slider-block>input[type="radio"] {
+            display: none;
+        }
+
+        .slider-block>input[type="radio"]#r-next:checked~.slider-wrapper {
+            transform: translateX(-1000px);
+        }
+
+        .slider-block>input[type="radio"]#r-prev:checked~.slider-wrapper {
+            left: 0px;
+        }
+
+        .box-item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .box-list {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .box-header>p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: #888;
+        }
+
+        .box-text {
+            position: relative;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .box-tag {
+            border: 1px solid;
+            width: 70px;
+            border-radius: 25px;
+            text-align: center;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 4px 7px;
+        }
+
+        .box-banner {
+            width: 250px;
+        }
+
+        .box-banner>img {
+            width: 100%;
+            display: block;
+        }
+
+        .list-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 50px;
+            margin-left: 20px;
+        }
+
+        .list-text {
+            font-size: 20px;
+            color: #888;
+        }
+
+        .list-menu {
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        .price-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .list-discount {
+            color: red;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .list-price {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .box-banner2 {
+            width: 250px;
+        }
+
+        .box-banner2>img {
+            width: 100%;
+            display: block;
+        }
+
+        .logo-button {
+            display: flex;
+            width: 203px;
+            gap: 80px;
+        }
+
+        .cart2>img {
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: 0 3px 3px 0;
+        }
+
+        .cart2>img:hover {
+            background-color: greenyellow;
+        }
+
+        .like>img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 3px 3px 0;
+        }
+
+        .like>img:hover {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header">
+                <ul class="menu">
+                    <li><a href="javascript:void(0)">로그인</a></li>
+                    <li><a href="javascript:void(0)">회원가입</a></li>
+                    <li><a href="javascript:void(0)">쿠폰등록</a></li>
+                    <li><a href="javascript:void(0)">
+                            <span class="material-symbols-outlined">
+                                bookmark
+                            </span>스크랩</a></li>
+                    <li><a href="javascript:void(0)">고객센터
+                            <div class="triangle-down"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <div class="nav-top">
+                    <div class="left logo">
+                        <img src="./image/logo2.png" alt="logo">
+                    </div>
+                    <div class="left-menu">
+                        <a href="javascript:void(0)" class="on">건강마켓</a>
+                        <a href="javascript:void(0)" class="off">식단관리</a>
+                    </div>
+                    <div class="nav-right">
+                        <div class="serach">
+                            <input id="newSearchInput" class="search-input" type="text" placeholder="건강을 쉽게, 뉴트릿">
+                            <button type="button" class="search-remove" style="display: none;">지우기</button>
+                            <a href="javascript:void(0)" class="search-2"><img src="./image/search_logo.png"
+                                    alt="검색"></a>
+                        </div>
+                        <div class="right-logo">
+                            <img src="./image/배송안내.jpg" alt="배송안내">
+                        </div>
+                        <a href="javascript:void(0)" class="cart">
+                            <span id="carCnt">0</span>
+                            <img src="./image/cart.png" alt="장바구니">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-bottom">
+                    <ul>
+                        <li id="sitemenu">
+                            <input type="checkbox" id="chk">
+                            <label for="chk">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+                            <div class="site-block">
+                                <div class="category-container">
+                                    <div class="category-container-1">
+                                        <h3>건강마켓</h3>
+                                        <ul class="padding">
+                                            <li><a href="javascript:void(0)">메인요리/반찬</a></li>
+                                            <li><a href="javascript:void(0)">국/탕/찌개</a></li>
+                                            <li><a href="javascript:void(0)">맞춤 도시락</a></li>
+                                            <li><a href="javascript:void(0)">밥/면/죽</a></li>
+                                            <li><a href="javascript:void(0)">샐러드/디저트/분식</a></li>
+                                            <li><a href="javascript:void(0)">식재료</a></li>
+                                            <li><a href="javascript:void(0)">키즈</a></li>
+                                            <li><a href="javascript:void(0)">마켓 정기구독</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="category-container-1">
+                                        <h3>브랜드직송관</h3>
+                                        <ul class="padding">
+                                            <li><a href="javascript:void(0)">명인명촌</a></li>
+                                            <li><a href="javascript:void(0)">건강식품</a></li>
+                                            <li><a href="javascript:void(0)">신선식품</a></li>
+                                            <li><a href="javascript:void(0)">농협</a></li>
+                                            <li><a href="javascript:void(0)">유제품/디저트</a></li>
+                                            <li><a href="javascript:void(0)">김치/참기름</a></li>
+                                            <li><a href="javascript:void(0)">커피/차/유아식</a></li>
+                                            <li><a href="javascript:void(0)">에코라이프</a></li>
+                                            <li><a href="javascript:void(0)">전통주</a></li>
+                                            <li><a href="javascript:void(0)#">기프트카드</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="category-container-1">
+                                        <h3>쇼핑 팁 <span class="tip-txt">Tip</span></h3>
+                                        <ul class="padding">
+                                            <li><a href="javascript:void(0)">베스트</a></li>
+                                            <li><a href="javascript:void(0)">할인</a></li>
+                                            <li><a href="javascript:void(0)">기획전</a></li>
+                                            <li><a href="javascript:void(0)">이벤트</a></li>
+                                            <li><a href="javascript:void(0)">리뷰라운지</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="category-container-1">
+                                        <h3>라운지</h3>
+                                        <ul class="padding">
+                                            <li><a href="javascript:void(0)">브랜드 소개</a></li>
+                                            <li><a href="javascript:void(0)">뉴트릿 매거진</a></li>
+                                            <li><a href="javascript:void(0)">뉴트릿 TV</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="category-container-1">
+                                        <h3>서비스</h3>
+                                        <ul class="padding">
+                                            <li><a href="javascript:void(0)">배송안내</a></li>
+                                            <li><a href="javascript:void(0)">모바일 이용권</a></li>
+                                            <li><a href="javascript:void(0)">제휴 문의/안내</a></li>
+                                            <li><a href="javascript:void(0)">공지사항</a></li>
+                                            <li><a href="javascript:void(0)">고객센터</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="category-bar">
+                                        <img src="./image/category_bar.jpg" alt="카테고리배너">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="javascript:void(0)">카테고리</a>
+
+                        <li><a href="javascript:void(0)">베스트</a></li>
+                        <li><a href="javascript:void(0)">할인</a></li>
+                        <li><a href="javascript:void(0)">기획전</a></li>
+                        <li><a href="javascript:void(0)">이벤트</a></li>
+                        <li><a href="javascript:void(0)">라운지</a></li>
+                        <li><a href="javascript:void(0)">시니어관</a></li>
+                        <li><a href="javascript:void(0)">브랜드직송관</a></li>
+                        <li><a href="../원병선/02영양진단_동의.html">무료영양진단</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="main">
+                <section class="se-banner1">
+                    <h2 class="blind" style="display: none;">배너</h2>
+                    <div class="slider-block">
+                        <input type="radio" id="r-prev" name="sliderbutton" checked>
+                        <input type="radio" id="r-next" name="sliderbutton">
+                        <label for="r-prev" class="prev"><span class="material-symbols-outlined">
+                                ◁</span></label>
+                        <label for="r-next" class="next"><span class="material-symbols-outlined">▷</span></label>
+                        <div class="slider-wrapper">
+                            <div class="items">
+                                <img src="./image/배너1.jpg" alt="배너1">
+                            </div>
+                            <div class="items">
+                                <img src="./image/배너2.jpg" alt="배너2">
+                            </div>
+                            <div class="items">
+                                <img src="./image/배너3.jpg" alt="배너3">
+                            </div>
+                            <div class="items">
+                                <img src="./image/배너4.jpg" alt="배너4">
+                            </div>
+                            <div class="items">
+                                <img src="./image/배너5.jpg" alt="배너5">
+                            </div>
+                            <div class="items">
+                                <img src="./image/배너6.jpg" alt="배너6">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="se-banner">
+                    <div class="box-list">
+                        <div class="box-header">
+                            <p>건강은 밥상으로부터</p>
+                            <h3 class="box-text">
+                                <strong>자신있게 추천드려요</strong>
+                                <span class="box-tag">SALE</span>
+                            </h3>
+                        </div>
+                        <div class="box-item">
+                            <div class="box-banner">
+                                <img src="./image/음식1.jpg" alt="음식1">
+                            </div>
+                            <div class="list-info">
+                                <span class="list-text">가쓰오부시로 감칠맛을 더한</span>
+                                <span class="list-menu">해초 붓카케 우동 331g</span>
+                                <div class="price-row">
+                                    <span class="list-discount">15%</span>
+                                    <span class="list-price">4,330원</span>
+                                </div>
+                                <div class="logo-button">
+                                    <a href="javascript:void(0)">
+                                        <span class="cart2"><img src="./image//cart2.png" alt="cart"></span>
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <span class="like"><img src="./image/like.png" alt="like"></span>
+                                    </a>
+                                </div>
+                                <div class="list-logo">
+                                </div>
+                            </div>
+                            <div class="box-banner2">
+                                <img src="./image/음식2.jpg" alt="음식2">
+                            </div>
+                            <div class="list-info">
+                                <span class="list-text">오도통한 새우와 레몬을 더한</span>
+                                <span class="list-menu">레몬크림새우 370g</span>
+                                <div class="price-row">
+                                    <span class="list-discount">10%</span>
+                                    <span class="list-price">9,450원</span>
+                                    <span><img src="./image/냉동.png" alt="냉동"></span>
+                                </div>
+                                <div class="logo-button">
+                                    <a href="javascript:void(0)">
+                                        <span class="cart2"><img src="./image/cart2.png" alt="cart"></span>
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <span class="like"><img src="./image/like.png" alt="like"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="bottom-banner">
+                    <div class="list">
+                        <img src="./image/banner1.jpg" alt="배너1">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="footer">
+        <div class="footer-hd">
+            <div class="footer-hd-inner">
+                <div class="footer-left">
+                    <ul class="footer-item">
+                        <li>회사소개</li>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                        <li>제휴문의</li>
+                    </ul>
+                    <div class="support">
+                        <strong class="support-title">고객센터</strong>
+                        <span class="support-tel">1800-0700</span>
+                        <p class="support-desc">
+                            평일, 토요일 7:00~18:00
+                            <br>
+                            공휴일 7시 ~ 13시(일요일휴무)
+                            <br>
+                            카카오톡 @뉴트릿 친구 추가하고 소식과 혜택을 받아보세요.
+                        </p>
+                    </div>
+                    <ul class="sns">
+                        <li>
+                            <a href="https://www.instagram.com/greating.official/" target="_blank">
+                                <img src="./image/insta_logo.svg" alt="인스타 로고">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UClyxH287Qe5OEWxCPXRRvHg" target="_blank">
+                                <img src="./image/youtube_logo.svg" alt="유튜브 로고">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://blog.naver.com/h_greating" target="_blank">
+                                <img src="./image/blog_logo.svg" alt="네이버 블로그 로고">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fpf.kakao.com%2F_xjuhtT%2Fchat%3Fapi_ver%3D1.0%26kakao_agent%3Dsdk%252F1.43.6%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fwww.greating.co.kr%26app_key%3D3ee3b3c91fa6a9e9be6b05253143a90b%26referer%3Dhttps%253A%252F%252Fwww.greating.co.kr%252F#login"
+                                target="_blank">
+                                <img src="./image/kakaotalk_logo.svg" alt="카카오톡 로고">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <div class="company">
+                        <strong class="company-name">현대그린푸드</strong>
+                        <div class="company-info">
+                            대표이사 : 원병선 | 사업장소재지 : 대구 중구 중앙대로 366 9층, 10층
+                            <br>
+                            사업자등록번호 : 123-45-78910 [사업자정보확인] | 통신판매신고번호 : 제 2023-용인수자-0719호
+                            <br>
+                            개인정보보호책임자 : 박한결 | 호스팅 서비스 작업자 : (주)현대그린푸드
+                            <br>
+                            <p>
+                                뉴트릿의 개별 판매자가 등록한 상품(브랜드직송)에 대한 광고, 상품주문, 배송, 환불의 의무와 책임은
+                                <br>
+                                각 판매자가 부담하고, 뉴트릿은 통신판매 중계자로서의 의무와 책임을 다합니다.
+                            </p>
+                        </div>
+                        <div class="company-info2">
+                            <img src="./image/ISMSP_logo.jpg" alt="ISMSP_logo">
+                            <div class="info2-flex">
+                                [인증범위] : 대표홈페이지 및 뉴트릿몰 서비스 운영
+                                <br>
+                                [유효기간] : 2026.02.24 ~ 2027.02.24
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</html>

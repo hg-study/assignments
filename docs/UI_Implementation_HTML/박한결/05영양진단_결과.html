@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴트릿 영양진단 결과</title>
+
+    <!-- GOOGLE ICON -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">   
+
+        <style>
+            .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 290,
+            'GRAD' 0,
+            'opsz' 24
+            }
+        </style>
+
+    <!-- ICON2 -->
+    <script src="https://kit.fontawesome.com/87e563cafe.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        *{box-sizing: border-box;}
+        body{padding: 0; margin: 0;}
+        a{color: black; text-decoration: none;}
+        ul,p{list-style: none; margin: 0; padding: 0;}
+        button{background: none; border: none; padding: 0; margin: 0; cursor: pointer; outline: none; color: inherit; font: inherit;}
+
+        /* Layout 페이지: 1440px 내용: 640px*/
+        .wrapper{}
+
+        .wrapper>.header-layout{ /* .wrapper>header와 동일 */
+            top: 0;
+            background-color: white;
+            position: sticky; /* 스크롤 내려도 위쪽 위치 */
+            width: 100%; 
+            margin: 0 auto; 
+            z-index: 999;
+            border-bottom: 1px solid gainsboro;
+            }
+
+        .wrapper>.main-layout{
+            width: 100%;
+            margin: 0 auto; 
+            padding: 0 20px;
+
+            max-width: 640px; 
+            padding-bottom: 120px;
+            }
+ 
+        .layout-top{padding-top: 65px;}
+
+        .font-orange{color: #FF9C54;}
+        .font-red{color: #FF6F6F; font-weight:800;}
+        .font-yellow{color: #FFD014; font-weight:800;}
+        .font-green{color: #A8CE62; font-weight:800;}
+        .font-darkgreen{color: #918C00; font-weight:800;}
+        .font-gray{color: #5e5e5e; font-weight:700;}
+        .font-onlyblack{color: black; font-weight:700;}
+        .font-black{position: relative; color: black; font-weight:700; z-index: 1;}
+        .font-black::after{
+            content:''; 
+            position: absolute; 
+            left: 0; 
+            background-color: yellow; 
+            width: 100%; 
+            height: 12px; 
+            margin-top:16px;
+            z-index: -1;}
+        
+        /* Layout-header */
+
+        .wrapper>header>ul{
+            position: relative;  /* absolute 기준점 */
+            padding: 15.5px;  /* 높이 설정 */
+            
+            display: flex;  /* 요소들 가로 나열 */
+            justify-content: center;  /* 가운데 정렬(아래 자식이 정렬) */
+            align-items: center;  /* 중앙 정렬 */
+        }
+        .wrapper>header>ul>li:nth-child(1){
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .material-symbols-outlined{
+            position: absolute; /* 주변요소 무시 & 재배치 */
+
+            right: 14px; /* 오른쪽 정렬 */
+            top: 50%; /* 수직 중앙 정렬. 부모 50% 지점 */
+            transform: translateY(-50%); /* 수직 중앙 정렬. 자식 높이 50%만큼 위 */
+
+            font-size: 2.2rem;
+            color: #494949;
+        }
+        
+        /* Layout-main */
+        .wrapper>main{}
+        .wrapper>main>div{}
+
+        /* main-user-data */
+        .wrapper>div>main>.user-info{
+            padding-top: 25px;
+            position: relative;
+            display: flex;
+        }
+
+        .wrapper>div>main>div>.user-data{
+            font-size: 21px;
+        }
+        .wrapper>div>main>div>.user-data-date{
+            position: absolute;
+            right: 110px;
+            bottom: 0;
+
+            font-weight: 500;
+            font-size: 16px;
+            color: #666666;
+            
+        }
+        .wrapper>div>main>div>div>.user-data-print{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            font-size: 13.6px;
+            color: #918C00;
+
+            margin-left: 10px;
+            padding: 1px 10px;
+            border: 1px solid #918C00;
+            border-radius: 20px;
+        }
+        .user-info-in{
+            padding-top: 11px;
+        }
+        .user-info-ul{
+            display: flex;
+            flex-wrap: wrap;  /* 너비 차면 다음 줄*/
+            
+            background-color: #f4f4f4;
+            border-radius: 20px;
+            padding: 15px 20px ;
+        }
+        .user-info-ul>li>hr{
+            display: block;
+            width: 100%;
+            border: solid gainsboro;
+            border-width: 1px 0 0 0;
+        }
+        .user-info-ul>li{
+            width: 50%;
+        }
+        .user-info-ul>li:nth-child(2){
+            padding-bottom: 7px;
+        }
+
+        .user-info-ul>li>strong{
+            padding-top: 15px;
+            color: #a4a4a4;
+            font-weight: 500;
+        }
+        .user-info-ul>li>p{
+            margin-top: 2px;
+            font-weight: 500;
+        }
+        .user-info-ul>li:last-child{
+            padding-bottom: 6px;
+        }
+
+        /* EAT SCORE */
+        .eat-score {
+            
+        }
+        .eat-score>.title{
+            letter-spacing: 0.027rem; /* 자간 넓게 */
+            
+        }
+
+        .eat-score>.title-text {
+            
+            
+        }
+        
+
+        /* EAT SCORE - scorebar*/
+
+        .scorebar-container {
+            margin: 29px 0 81px 0;  /* 공간 띄우기 */
+        }
+
+        .scorebar {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to right, #FF6F6F, #FFD014, #A8CE62);
+            /* linear-gradient: 둘 이상의 색상 혼합. 기본은 위-아래, 방향 설정은 to right,bottom.. */
+        }
+
+        .scorebar>.bar-left, .bar-right {
+            position: absolute;
+            top: 20px;         
+            font-size: 12px;
+            font-weight: 550;
+            color: #818181;
+        }
+        .scorebar>.bar-right { right: 0; } /* 오른쪽 나열 */
+
+        .scorebar>.user-score {
+            position: absolute;
+            bottom: 30px;     
+            left: 80%;
+            
+            transform: translateX(-50%); /* 중앙 정렬 위해 사용 */
+            background-color: #1C1C1C;
+            
+            padding: 2px 9px;
+            border-radius: 20px;
+
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .scorebar>.user-score::after {  /* 아래 세모꼴 만들기 */
+            position: absolute;
+            content: ''; /* 가상요소 생성 시 작성 필요 */
+            
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            border-top: 7px solid #1C1C1C; /* 삼각형 색 (삼각형의 높이)*/
+            /* 양옆 테두리 투명하게 깎기 (삼각형의 밑변 너비)*/
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+
+        .scorebar>.average-score {
+            position: absolute;
+            height: 35px;            
+            left: 85%;
+            
+            /* border-left: 왼쪽 테두리, dotted: 점선 */
+            border-left: 1px dotted #1C1C1C;
+            transform: translateX(-50%); /* 중앙정렬 */
+        }
+
+        .scorebar>.average-score>.average-info {
+            position: absolute;
+            top: 38px;         
+            left: 50%;
+            
+            transform: translateX(-50%);
+            text-align: center;  /* 가운데 정렬 */
+            font-size: 10.7px;
+            color: #818181;
+            font-weight: 590;
+            width: max-content; /* 너비 조정 */
+        }
+
+        .average-info>strong {
+            display: block;
+            color: #1C1C1C;
+            font-size: 12px;
+            margin-top: 2px;
+           
+        }
+
+        /* user kcal */
+
+        .kcalbar-container {
+            margin: 27px 0 0;
+            padding: 50px 0 80px;
+        }
+        .kcalbar-container>.kcalbar { /* 바 제작 */
+            position: relative;
+            width: 100%;
+            height: 42px;
+            border: solid gainsboro;
+            border-width: 1px;
+            border-radius: 10px;
+        }
+
+        .kcalbar-container>.kcalbar>.bar-kcal{/* 칼로리 글 */
+            position: absolute;
+            
+            top: 47px;
+            font-size: 11px;
+            color: #707070;
+        }
+        .bar-kcal.a {left: 20%; transform: translateX(-50%);}
+        .bar-kcal.b {left: 40%; transform: translateX(-50%);}
+        .bar-kcal.c {left: 60%; transform: translateX(-50%);}
+        .bar-kcal.d {left: 80%; transform: translateX(-50%);}
+
+        .kcalbar-container>.kcalbar>.bar-kcal::before{/* 구분선 */
+            content: '';
+            position: absolute;
+            left: 50%;
+            height: 40px;
+            top:-47px;
+
+            border-left: 1px solid gainsboro;
+            transform: translateX(-50%);
+            
+        }
+
+        .kcalbar-container>.kcalbar>.bar-info{ /* 적정 박스 모양 */
+            border: solid gainsboro;
+            border-width: 0 1px;
+
+            position: absolute;
+            width: 60px;
+            height: 100%;
+
+            background-color: #A8CE62;
+            left: 55%;
+            transform: translateX(-50%);
+
+            color: white;
+            font-weight: 800;
+            /* 중앙 정렬 */
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            
+            
+        }
+        .kcalbar-container>.kcalbar>.kcal-top{ /* 기초대사량 위쪽 모양 */
+            position: absolute;
+            background-color: #E7E7E7;
+            padding: 5px 10px;
+            border-radius: 25px;
+            left: 35%; /* 값 조정 위치 */
+            transform: translateX(-50%);
+            bottom: 50px;
+
+            font-size: 12px;
+            color: #666666;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .kcalbar-container>.kcalbar>.kcal-top::before{ /* 동그라미 */
+            content: '';
+            position: absolute;
+            background-color: #BBBBBB;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            top: 89px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .kcalbar-container>.kcalbar>.kcal-top::after{/* 선 */
+            content: '';
+            position: absolute;
+            height: 44px;
+            left: 50%;
+            top: 45px;
+
+            border-left: 1px dotted #1C1C1C;
+            transform: translateX(-50%);
+        }
+        
+        .kcalbar-container>.kcalbar>.kcal-bottom{ /* 권장 아래쪽 모양 */
+            position: absolute;
+            background-color: white;
+            padding: 5px 10px;
+            border: 2px solid black;
+            border-radius: 25px;
+            left:54%; /* 값 조정 위치 */
+            transform: translateX(-50%);
+            top: 80px;
+            box-shadow: 0 3px 5px #c0c0c0; /*그림자 생성. box-shadow:수평 수직 흐림 색상*/
+            font-size: 12px;
+            font-weight: 800;
+            text-align: center;
+            
+        }
+
+        .kcalbar-container>.kcalbar>.kcal-bottom::before{ /* 동그라미 */
+            content: '';
+            position: absolute;
+            background-color: #1C1C1C;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .kcalbar-container>.kcalbar>.kcal-bottom::after{/* 선 */
+            content: '';
+            position: absolute;
+            height: 44px;
+            left: 50%;
+            bottom: 46px;
+            border-left: 1px dotted #1C1C1C;
+            transform: translateX(-50%);
+        }
+        
+        
+        /* nutrient intake */
+
+
+        .nutrientbar-container{ /* 박스 */
+            position: relative;
+            width: 100%;
+            height: 131px;
+            margin: 20px 0;
+            padding: 20px 20px 15px 160px;
+    
+            box-shadow: 0 0 10px #d8d8d8; /*그림자 생성*/
+            border-radius: 17px;
+        }
+
+        .nutrientbar-container>.con-font{
+            /* 왼쪽 영양소 g */
+            position: absolute;
+            left: 50px;
+            /* 가운데 정렬 */
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .con-font>.cong{font-size: 28px;}
+
+        .nutrientbar-container>.nutrientbar{
+            /* bar */
+            position: relative;
+            padding: 30px 0 0 30px;
+            height: 20px;
+            width: 100%;
+        }
+
+        .nutrientbar>.bar-co{
+            position: relative;
+            border-radius: 30px;
+            height: 20px;
+
+            display: flex;
+            overflow: hidden;  
+        }
+
+        /* 색상&위치 조정 */
+        .bar-color.nu-yellow{
+            background-color: #FFD014; 
+            width: 20%;
+        }
+        .bar-color.nu-green{
+            background-color: #A8CE62;
+            width: 30%;
+        }
+        .bar-color.nu-red{
+            background-color: #FF6F6F;
+            width: 50%;
+        }
+
+        .bar-tri{/* 세모 위치 표시 */
+            position: absolute;
+            bottom: -28px;
+
+            border-bottom: 16px solid black;
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            z-index: 1;
+        }        
+
+        .nutrientbar>.bar-line{
+            /* 바 g 글씨 모양 */
+            position: absolute;
+            bottom: 17px;
+            color: #919191;
+            font-weight: 500;
+        }
+
+        .nutrientbar>.bar-line::after{
+            /* 바 선 모양 */
+            content: '';
+            position: absolute;
+            height: 47px;
+            top: 28px;
+            border-left: 1px dashed #bebebe;
+            
+            left: 45%;
+            transform: translateX(-50%);
+        }
+
+        .nutrientbar-container>.con-co{ /* 위치조정 */
+            display: flex;
+            justify-content: space-between;
+            
+            margin-top: 46px;
+            margin-left: 11px;
+            padding: 0 125px;
+            
+            width: 100%;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .con-color::before{/* box 위치 조정 */
+            content: '';
+            position: absolute;
+            margin-top: 2px;
+            width: 15px;
+            height: 15px;
+            transform: translateX(-20px);  
+        }
+        /* 색상 조정 */
+        .con-color.nu-yellow::before
+        {
+            background-color: #FFD014;
+            
+        }
+        .con-color.nu-green::before{
+            background-color: #A8CE62;
+        }
+        .con-color.nu-red::before{
+            background-color: #FF6F6F;
+        }
+
+        /* nutrient guide  */
+        .nutrient-box{/* 박스 정렬 */
+            position: relative;
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+
+            padding: 23px 0 10px 0;
+        }
+        .nutrient-box>.nu-box{/* 박스 3개 제작 */
+            width: 33%;
+            height: 48px;
+            border-radius: 30px;
+
+            font-size: 16px;
+            font-weight: 800;
+            color:#7a7a7a;
+            background-color: white;
+            border: 1px solid #d6d6d6;
+        }
+
+        .nutrient-box>.nuyel{ /* 노란색 */
+            background-color: #FFD014;
+            color: white;
+            border: white;
+        }
+
+        .nutrient-bar{ /* 바 제작&정렬 */
+            position: relative;
+
+            width: 100%;
+            height: 58px;
+
+            border-radius: 30px;
+            border: 1px solid #d6d6d6;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .nutrient-bar>span:nth-child(1){
+            color: #a8a8a8;
+            font-weight: 800;
+        }
+        .nutrient-bar>span:nth-child(2){
+            position: absolute;
+            left: 130px;
+        }
+        .nutrient-bar>span:nth-child(3){
+            color: #a8a8a8;
+            font-size: 1.2rem;
+        }
+
+        .natriumbar{
+            position: relative;
+            width: 100%;
+            height: 42px;
+            border: 1px solid gainsboro;
+            border-radius: 15px;
+            margin: 60px 0 115px;
+        }
+        .natriumbar>.nat-bar{/* 글씨 변경 */
+            position: absolute;
+            color: #A8CBFF;
+            font-size: 14px;
+            text-align: center;  
+            font-weight: 500;
+
+            padding-left: 30%;
+            bottom: 53px;
+            left: 3%;
+        }
+        .natriumbar>.nat-bar.left::after{/* 바 선 */
+            content: '';
+            position: absolute;
+            border-left: 10px solid #A8CBFF;
+            height: 42px;
+            top: 52px;
+            left: 76%;
+        }
+
+        .natriumbar>.nat-bar.right{ 
+            /* 오른쪽 글씨 설정 */
+            left: 130px;
+            color: #868686;
+            top: 45px;
+            left: 35%;
+
+        }
+        .natriumbar>.nat-bar.right::after{
+            /* 오른쪽 바 설정 */
+            content: '';
+            position: absolute;
+            border-left: 10px solid #aaaaaa;
+            height: 42px;
+            bottom: 4px;
+            left: 77%;
+
+        }
+
+        .natriumbar>.nat-bottom{
+            /* 상자 생성&글씨 수정 */
+            position: absolute;
+            background-color: white;
+            padding: 2px 8px;
+            border: 2px solid black;
+            border-radius: 25px;
+            left:85%; /* 값 조정 위치 */
+            transform: translateX(-50%);
+            top: 120px;
+            box-shadow: 0 3px 5px #c0c0c0; /*그림자 생성. box-shadow:수평 수직 흐림 색상*/
+            font-size: 12px;
+            font-weight: 800;
+            text-align: center;
+
+        }
+        .natriumbar>.nat-bottom::before{/* 점선 */
+            content: '';
+            position: absolute;
+            height: 80px;
+            left: 50%;
+            bottom: 40px;
+            border-left: 1px dotted #1C1C1C;
+            transform: translateX(-50%);
+        }
+        .natriumbar>.nat-bottom::after{ /* 원 */
+            content: '';
+            position: absolute;
+            background-color: #1C1C1C;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            bottom: 115px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* macro ratio */
+
+        .macrobar-container{ /* 상자 */
+            margin: 20px 0;
+            position: relative;
+            border: 1px solid gainsboro;
+            width: 100%;
+            height: 310px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .macbar-box{ /* 위 라벨 */
+            background-color: #918C00;
+            border-radius: 20px;
+            height: 60px;
+            
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+
+            display: flex;  
+            justify-content: center;  
+            align-items: center; 
+            
+        }
+        .macbar-right>.macbar-box{      /* 왼쪽 라벨 */
+            background-color: #e2e2e2;
+            color: black;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        .macbar-boxnum{  /* 퍼센트 */
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 39px;
+            left: 1px;
+            font-size: 16.5px;
+            margin-top: 37px;
+        }
+
+        .macbar-right>.macbar-boxnum{padding: 28px;}
+
+        .macbar-left>.macbar-boxnum>.boxnum:nth-child(2){
+            margin-top: 65px;
+        } 
+        .macbar-left>.macbar-boxnum>.boxnum:nth-child(3){
+            margin-top: 45px;
+        } 
+
+        .macbar-right>.macbar-boxnum>.boxnum:nth-child(1){
+            margin-top: -5px;
+        } 
+
+        .macbar-right>.macbar-boxnum>.boxnum:nth-child(2){
+            margin-top: 76px;
+        } 
+        .macbar-right>.macbar-boxnum>.boxnum:nth-child(3){
+            margin-top: 56px;
+        }    
+
+        .macbar-boxline{
+            /* 막대컨테이너 통합 스타일*/
+            position: absolute;
+            margin-top: 45px;
+            width: 100%;
+            height: 58%;
+            display: flex;
+            align-items: flex-end; /* 아래 정렬 */
+            padding-right: 20px;
+        }
+        .boxline::after{  /* 선 */
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            bottom: 17px;
+            border-bottom: 1px solid gainsboro;
+        }
+        .boxline{  /* 막대 글자 */
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* 세로 배치 */
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;  
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .boxline::before{  /* 막대 통합 스타일 */
+            content: '';
+            display: block;
+            width: 60px;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .boxline.font-green::before{
+            height: 105px; 
+            background-color: #A8CE62; 
+        }
+        .macbar-right>.macbar-boxline>.boxline.font-green::before{
+            height: 120px; 
+            background-color: #A8CE62; 
+        }
+        .boxline.font-orange::before{
+            height: 40px;
+            background-color: #FF9C54; 
+        }
+        .boxline.font-yellow::before{
+            height: 60px;
+            background-color:#FFD014;
+        }
+
+        .macrobar-container>.macbar-left{ /* 상자 왼쪽 부분 */
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: white;
+            padding: 12px;
+        }
+        .macrobar-container>.macbar-right{
+            /* 상자 오른쪽 부분 */
+            position: absolute;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background-color: #f8f8f8;
+            padding: 12px;
+        }
+        .linkicon{
+            margin-left: auto;
+            margin-bottom: 20px;                  
+        }
+        .fa-solid.fa-link{
+            position: relative;
+            color: white;
+
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+
+            font-size: 1.3rem;
+        }
+
+        .fa-solid.fa-link::after{
+            content: '';
+            position: absolute;
+            background-color: #9b9b9b;
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .result{
+            position: relative;
+            padding: 20px 120px; 
+            
+        }
+
+        .result-btn{
+            width: 100%;
+            background-color: #918C00;
+            border-radius: 40px;
+            height: 70px;
+            margin-bottom: 13px;
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .result-btn:nth-child(2){
+            background-color: white;
+            color: #918C00;
+            border:1px solid #918C00;
+        }
+
+        .result>.title-text2{
+            text-decoration: underline;
+            display: flex;
+            justify-content: center; 
+            align-items: center;  
+            padding-bottom: 45px;    
+        }
+
+
+        /* title */
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .title-hr {
+            display: block;
+            margin: 6px 0 10px 0;
+           
+            width: 100%;
+            border: solid gainsboro;
+            border-width: 1px 0 0 0;
+            
+        }
+
+        /* title sub */
+        .title-txs {
+            display: flex;
+            width: 100%;
+        }
+        .title-text {
+            font-weight: 500;
+            font-size: 0.99rem;
+            color: hsl(0, 0%, 64%);
+        }
+
+        .fa-solid {  /* help icon */
+            margin-left: 2px;
+            color: #c5c5c5;
+        }
+
+        .title-text2 {
+            padding-top: 30px;
+            font-weight: 500;
+            color: #757575;
+        }
+
+        .eat-score>.score {
+            padding-top: 14px;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        /* 모달 */
+
+        .modal {
+            border: none;
+            width: 530px;
+            height: 210px;
+
+            padding: 20px 30px 20px 30px;
+            font-size: 16px;
+            
+        }
+
+        .modal-close {
+            position: absolute; 
+            right: 1px;
+            bottom: 85%; 
+            transform: translateY(-50%);      
+        }
+
+        dialog::backdrop{
+            background-color: #00000081;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    
+    <div class="wrapper">
+        <!-- 레이아웃 크기 결정 class: layout -->
+        <header class="header-layout">
+            <ul>
+                <li>뉴트릿 영양진단 결과</li>
+                <li><a href="../박영준/01메인페이지.html"><span class="material-symbols-outlined">close</span></a></li>
+            </ul>  
+        </header>
+
+        <div class="main-layout">
+
+            <main>
+                <!-- user part -->
+                <div class = "user-info">
+                    <div class="user-data"><strong>홍길동</strong>님</div>
+                    <div class="user-data-date">설문일자: 2026.03.24</div>
+                    <div><a class="user-data-print"><strong style="font-weight: 800;">프린트 하기 ❯</strong></a></div>
+                </div>
+                <div class = "user-info-in">
+                    <ul class = "user-info-ul" >
+                        <li><strong>고객정보</strong><p>남성 / 23세</p></li>
+                        <li><strong>키/몸무게</strong><p>178cm / 68kg</p></li>
+                        <li style=" width: 100%;"><hr></li>
+                        <li><strong>질병</strong><p>해당없음</p></li>
+                        <li><strong>관심사</strong><p>근력, 체중조절, 피로회복</p></li>
+
+                    </ul>
+                </div>
+
+                <!-- eat score -->
+                <div class = "eat-score layout-top">
+
+                    <div class = "title">EAT SCORE</div>
+                    <hr class = "title-hr">
+
+                    <div class="title-txs">
+                        <div class = "title-text">적정 섭취량과 비교한 나의 실제 섭취량 점수</div>
+
+                        <div>
+                            <a href="javascript:void(0)">
+                                <span class="fa-solid fa-circle-question modal-btn"></span>
+                            </a>
+                            <!-- dialog: 모달 창 -->
+                            <dialog class="modal">
+                                <h2 style="font-size: 20px; text-align: center;">EAT SCORE</h2>
+                                <!-- 닫는 기능 -->
+                                <form class="modal-close" method="dialog">
+                                    <button class="material-symbols-outlined" >close</button>
+                                </form>
+                                <p style="color: #4e4e4e; font-size:15.5px;">
+                                    적정 섭취량과 실제 섭취량 간의 차이를 개별 영양소별로 점수화한 후, 8가지 영양소 점수를 평균 낸 영양진단 점수입니다.
+                                    <br>100점에 가까울수록 각 영양소를 적정 수준으로 섭취한다고 볼 수 있어요.
+                                </p>
+                            </dialog>
+                        </div>
+                        
+                    </div>
+
+                    <div class= "title-text2">
+                        <span class="font-yellow">식이섬유</span> 섭취량이 부족하고,<br>
+                        <span class="font-red">콜레스테롤, 나트륨</span> 과다하여 잇스코어가 감점 되었어요.
+                    </div>
+                    
+                    <div class = "score"><span class="font-darkgreen" style="font-size: 27px;">80점</span> / 100점</div>
+
+                    <div class="scorebar-container">
+                            <div class="scorebar">
+
+                                <span class="bar-left">0점</span>
+                                <span class="bar-right">100점</span>
+
+                                <div class="user-score">80점</div>                                
+
+                                <div class="average-score">
+                                    <div class="average-info">20대 남성<br>평균 잇스코어<br><strong>85점</strong></div>
+                                </div>
+                            </div>
+                    </div>  
+                </div>
+                <!-- user kcal -->
+                <div class = "user-kcal layout-top">
+                    <div class = "title">나의 하루 칼로리</div>
+                    <hr class = "title-hr">
+                    <div class = "title-text">인적사항, BMI, 활동량을 기준으로 산출한 권장 및 섭취 열량</div>
+                      
+
+                    <div class= "title-text2">
+                        
+                        <span>
+                            <span class ="font-black">홍길동님</span> 하루 섭취 열량(kcal)이 권장 열량 대비 <span class="font-green">적정해요</span>
+                        </span>
+
+                    </div>
+
+                    <div class ="kcalbar-container">
+                        <div class= "kcalbar">
+                            
+                            <span class="bar-kcal a">1,000kcal</span>
+                            <span class="bar-kcal b">2,000kcal</span>
+                            <span class="bar-kcal c">3,000kcal</span>
+                            <span class="bar-kcal d">4,000kcal</span>
+
+                            <span class="bar-info">적정</span>
+                            <span class="kcal-top">기초대사량<br>1,731kcal</span>
+                            <span class="kcal-bottom">권장<br>2,700kcal</span>
+                        </div>
+                   </div>
+                </div>
+
+                <!-- nutrient intake -->
+                <div class="nutrient-intake layout-top">
+                    <div class = "title">영양소 섭취 상태</div>
+                    <hr class = "title-hr">
+                    <div class = "title-text">영양소별 나의 하루 권장 섭취 범위와 실제 섭취량 비교</div>
+                        
+                    <div class= "title-text2">
+                        <span style = "font-size: 17.6px;">
+                            <span class = "font-black" >나의 3대 영양소</span>
+                            <span class = "font-onlyblack"> 섭취 리포트</span>
+                        </span>
+                    </div>
+
+                    <div class= "title-text2">
+                        <span>
+                            <span class = "font-green">탄수화물, 단백질, 지방</span>은 적정해요
+                        </span>
+                    </div>
+
+                    
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font">
+                            <span class="cong font-green" style="font-weight:700;">368.5g</span> <br>탄수화물
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 38%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-yellow"></span>
+                                <span class="bar-color nu-green"></span>
+                                <span class="bar-color nu-red"></span>  
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 22%;">130g</span>                            
+                            <span class="bar-line nu-right" style="left: 48.2%;">440.3g</span> 
+                        </div>
+                        <div class ="con-co">
+                            <span class="con-color nu-yellow">부족</span>
+                            <span class="con-color nu-green">적정</span>
+                            <span class="con-color nu-red">과다</span>
+                        </div>
+                    </div>
+
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font">
+                            <span class="cong font-green" style="font-weight:700;">114.8g</span> <br>단백질
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 35%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-yellow"></span>
+                                <span class="bar-color nu-green"></span>
+                                <span class="bar-color nu-red"></span>  
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 21.2%;">67.7g</span>                            
+                            <span class="bar-line nu-right" style="left: 48.2%;">135.5g</span> 
+                        </div>
+                        <div class ="con-co">
+                            <span class="con-color nu-yellow">부족</span>
+                            <span class="con-color nu-green">적정</span>
+                            <span class="con-color nu-red">과다</span>
+                        </div>
+                    </div>
+                
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font">
+                            <span class="cong font-green" style="font-weight:700;">75.6g</span> <br>지방
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 35%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-yellow"></span>
+                                <span class="bar-color nu-green"></span>
+                                <span class="bar-color nu-red"></span>  
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 21.2%;">45.2g</span>                            
+                            <span class="bar-line nu-right" style="left: 49.1%;">90.3g</span> 
+                        </div>
+                        <div class ="con-co">
+                            <span class="con-color nu-yellow">부족</span>
+                            <span class="con-color nu-green">적정</span>
+                            <span class="con-color nu-red">과다</span>
+                        </div>
+                    </div>
+
+
+                    <div class= "title-text2">
+                        <span style = "font-size: 17.6px;">
+                            <span class = "font-black">나의 기타 영양소</span>
+                            <span class = "font-onlyblack"> 섭취 리포트</span>
+                        </span>
+                    </div>
+
+                    <div class= "title-text2">
+                        <span>
+                            <span class = "font-green">포화지방, 당류</span>은/는 적정하지만,<br>
+                            <span class = "font-yellow">식이섬유</span>은/는 부족하고<br>
+                            <span class = "font-red">콜레스테롤</span>은/는 과다해요
+                        </span>
+                    </div>
+
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font">
+                            <span class="cong font-yellow" style="font-weight:700;">30.7g</span> <br>식이섬유
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 29.6%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-yellow" style="width: 30%;"></span>
+                                <span class="bar-color nu-green" style="width: 70%;"></span>
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 30.5%;">33.9g</span>                            
+                        </div>
+                        <div class ="con-co" style = "padding: 0 160px;margin-left: 0px;" >
+                            <span class="con-color nu-yellow">부족</span>
+                            <span class="con-color nu-green">적정</span>
+                        </div>
+                    </div>              
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font">
+                            <span class="cong font-green" style="font-weight:700;">43.7g</span> <br>당류
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 53%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-green" style="width: 60%;"></span>
+                                <span class="bar-color nu-red" style="width: 40%;"></span>
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 60%;">50g</span>                            
+                        </div>
+                        <div class ="con-co" style = "padding: 0 160px;margin-left: 0px;" >
+                            <span class="con-color nu-green">적정</span>
+                            <span class="con-color nu-red">과다</span>
+                        </div>
+                    </div>                
+
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font">
+                            <span class="cong font-green" style="font-weight:700;">15.3g</span> <br>포화지방
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 37%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-green" style="width: 50%;"></span>
+                                <span class="bar-color nu-red" style="width: 50%;"></span>
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 49.2%;">21.1g</span>                            
+                        </div>
+                        <div class ="con-co" style = "padding: 0 160px;margin-left: 0px;" >
+                            <span class="con-color nu-green">적정</span>
+                            <span class="con-color nu-red">과다</span>
+                        </div>
+                    </div>                
+
+                    <div class = "nutrientbar-container">
+                        
+                        <div class = "con-font" style="left: 37px">
+                            <span class="cong font-red" style="font-weight:700;">441.6mg</span> <br>콜레스테롤
+                        </div>
+
+                        <div class = "nutrientbar">
+                            <div class = "bar-tri" style="left: 87%;"></div>
+                            <div class="bar-co">
+                                <span class="bar-color nu-green" style="width: 60%;"></span>
+                                <span class="bar-color nu-red" style="width: 40%;"></span>
+                            </div>
+                            
+                            <span class="bar-line nu-left" style="left: 57.2%;">300mg</span>                            
+                        </div>
+                        <div class ="con-co" style = "padding: 0 160px;margin-left: 0px;" >
+                            <span class="con-color nu-green">적정</span>
+                            <span class="con-color nu-red">과다</span>
+                        </div>
+                    </div> 
+                </div>
+
+                <!-- nutrient guide -->
+                <div class = "nutrient-guide layout-top">
+                    <div class = "title">영양소 섭취 가이드</div>
+                    <hr class = "title-hr">
+                    <div class = "title-text">권장 섭취량 대비 부족하거나 과다한 영양소 섭취 방법</div>
+
+                    <div class= "title-text2">
+                        <span>
+                            <span class = "font-darkgreen">홍길동님에게</span> 아래 영양소들이<br>
+                        </span>
+                    </div>
+
+                    <div class= "nutrient-box">
+                        <button class="nu-box nuyel click1">부족해요!</button>
+                        <button class="nu-box click2">적당해요!</button>
+                        <button class="nu-box click3">과다해요!</button>
+                    </div>
+
+                    <div class= "nutrient-bar">
+                        <span class = "nutbar-name">식이섬유</span>
+                        <span class = "nutbar-text">기준량 대비 
+                            <span class = "font-darkgreen" style="font-weight:800;">3.2g 적어요</span>
+                        </span>
+                        <span>❯</span>
+                    </div>
+
+                </div>
+
+
+                <!-- natrium guide -->
+                <div class = "natrium-guide layout-top">
+                    <div class = "title">나트륨 섭취 가이드</div>
+                    <hr class = "title-hr">
+                    <div class = "title-text">하루 나트륨 섭취 기준과 비교한 나의 섭취량 비교</div>
+
+                    <div class= "title-text2">
+                        <span>
+                            나의 나트륨 섭취량은 <span class = "font-gray">5,800mg</span> 이고,<br>
+                            나와 비슷한 성별•연령대 대비 <span class="font-red">과다해요</span>
+                        </span>
+                    </div>
+
+                    <div class = "natriumbar">
+                        
+                        <div class = "nat-bar left">만성질환 위험 감소수준<br>2,300mg</div>
+                        <div class = "nat-bar right"><span style="font-weight: 700;">3,807mg</span><br>비슷한 성별•연령대의<br>평균 섭취량</div>
+
+                        <div class = "nat-bottom">나의 섭취량<br>자세히 보기 ></div>
+                    </div>
+
+                </div>
+
+                <!-- macro ratio -->
+                <div class = "macro-ratio layout-top">
+                    <div class = "title">나의 탄단지 비율</div>
+                    <hr class = "title-hr">
+                    <div class="title-txs">
+                        <div class = "title-text">내가 섭취한 열량에 대한 탄단지 비율</div>
+
+
+                        <div>
+                            <a href="javascript:void(0)">
+                                <span class="fa-solid fa-circle-question modal-btn"></span>
+                            </a>
+                            <!-- dialog-->
+                            <dialog class="modal" style=" height: 330px;">
+                                <h2 style="font-size: 20px; text-align: center;">우리 몸이<br>가장 좋아하는 <span style="color: #918C00;">탄단지 섭취 비율</span></h2>
+                                <!-- 닫는 기능 -->
+                                <form class="modal-close" style="bottom: 90%;" method="dialog" >
+                                    <button class="material-symbols-outlined" >close</button>
+                                </form>
+                                <p style="color: #4e4e4e; font-size:15.5px; text-align: center;">
+                                    탄수화물, 단백질, 지방에서 섭취한 칼로리 비율이 <br><span style="font-weight: 800;color: #918C00;">50-65% : 10-20% : 15-30%일 때</span>를 말합니다.
+                                    <br><br>
+                                    위의 탄단지 섭취 비율은 식사와 관련된 만성질환 <br>위험감소를 고려한 에너지 적정 섭취 비율입니다.
+                                    <br><br><span style="position: absolute; bottom: 13%; left: 25px;">출처: 보건복지부_한국인 영양소 섭취 기준</span> 
+                                </p>
+                            </dialog>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class= "title-text2">
+                        <span>
+                            탄수화물 56%, 단백질 18%, 지방 26% 섭취 중이에요
+                        </span>
+                    </div>
+
+                    <div class = "macrobar-container">
+                        
+                        <div class="macbar-left">
+                            <div class= "macbar-box">나의 섭취 비율</div>
+                            
+                            <div class="macbar-boxnum">
+                                <span class="boxnum">56%</span>
+                                <span class="boxnum">18%</span>
+                                <span class="boxnum">26%</span>  
+                            </div>
+    
+                            <div class="macbar-boxline">
+                                <span class="boxline font-green">탄수화물</span>
+                                <span class="boxline font-orange">단백질</span>
+                                <span class="boxline font-yellow">지방</span>  
+                            </div>           
+                        </div>
+
+                        <div class="macbar-right">
+                            <div class= "macbar-box">한국인의 탄단지 <br>권장 섭취 비율</div>
+                            
+                            <div class="macbar-boxnum">
+                                <span class="boxnum">55-65%</span>
+                                <span class="boxnum">10-20%</span>
+                                <span class="boxnum">15-30%</span>  
+                            </div>
+    
+                            <div class="macbar-boxline">
+                                <span class="boxline font-green">탄수화물</span>
+                                <span class="boxline font-orange">단백질</span>
+                                <span class="boxline font-yellow">지방</span> 
+                            </div>  
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- share -->
+                <div class = "share layout-top">
+                    <div class = "title">가족과 친구들의 건강을 지켜주세요</div>
+                    <div class="title-txs">
+                        <div class = "title-text"><span class = "font-darkgreen">영양진단 서비스</span> 공유하기</div>
+                        <div class="linkicon"><a href="javascript:void(0)"><span  class="fa-solid fa-link"></span></a></div>
+                    </div>
+
+                    <hr class = "title-hr">
+                </div>
+                
+                <div class = "result">
+                    <div class="result-btn">결과 저장하기</div>
+                    <div class="result-btn">이메일로 보내기</div>
+                    <a class = "title-text2" href="../원병선/02영양진단_동의.html">다시하기</a>
+                </div>
+
+                <span class = "title-text2">영양진단 결과는<br>마이페이지 > 나의 헬스케어에서 확인할 수 있어요.</span>
+            </main>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        const modalBtns = document.querySelectorAll(".modal-btn") 
+        const modals = document.querySelectorAll(".modal")
+
+        modalBtns.forEach((btn,index) => {
+            btn.addEventListener("click",(e) => {
+            modals[index].showModal(); // 모달 보여주기
+            }); 
+        }); 
+        
+
+        const click1 = document.querySelector(".click1")
+        const click2 = document.querySelector(".click2")
+        const click3 = document.querySelector(".click3")
+
+        const nuBox1 = document.querySelector(".nu-box.click1")
+        const nuBox2 = document.querySelector(".nu-box.click2")
+        const nuBox3 = document.querySelector(".nu-box.click3")
+
+        const barname = document.querySelector(".nutbar-name")
+        const bartext = document.querySelector(".nutbar-text")
+        
+
+        click1.addEventListener("click",(e) => {
+            nuBox1.style.cssText = "background-color:#FFD014; color: white; border: none;";
+
+            barname.innerHTML = "식이섬유";
+            bartext.innerHTML = '기준량 대비 <span class = "font-darkgreen" style="font-weight:800;">3.2g 적어요';
+
+            nuBox2.style.cssText = "background-color:white; border: 1px solid #d6d6d6; color:#7a7a7a";
+            nuBox3.style.cssText = "background-color:white; border: 1px solid #d6d6d6; color:#7a7a7a";
+        }); 
+
+        click2.addEventListener("click",(e) => {
+            nuBox2.style.cssText = "background-color:#A8CE62; color: white; border: none;";
+            barname.innerHTML = "탄수화물";
+            bartext.innerHTML = "기준량을 잘 섭취하고 있어요";
+
+            nuBox1.style.cssText = "background-color:white; border: 1px solid #d6d6d6; color:#7a7a7a";
+            nuBox3.style.cssText = "background-color:white; border: 1px solid #d6d6d6; color:#7a7a7a";
+
+        }); 
+        
+        click3.addEventListener("click",(e) => {
+            nuBox3.style.cssText = "background-color:#FF6F6F; color: white; border: none;";
+            barname.innerHTML = "콜레스테롤";
+            bartext.innerHTML = '기준량 대비 <span class = "font-darkgreen" style="font-weight:800;">441.6mg 많아요';
+
+            nuBox1.style.cssText = "background-color:white; border: 1px solid #d6d6d6; color:#7a7a7a";
+            nuBox2.style.cssText = "background-color:white; border: 1px solid #d6d6d6; color:#7a7a7a";       
+        }); 
+    </script>
+
+
+</body>
+</html>
