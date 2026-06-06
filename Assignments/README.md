@@ -59,6 +59,8 @@
 
 ## 영양진단 서비스_HTML
 > 영양진단 서비스에 대한 HTML 화면 구현, ppt 소개
+> `영양진단 결과`를 맡아 구현했다. 몇몇 버튼을 클릭해 동작을 확인해볼 수 있다.
 
 - [화면구현 ppt](./03_UI_Implementation/01_UI_Implementation.pdf)
-  
+- [영양진단 결과 화면구현 구현](https://1gyeolpark.github.io/Fullstack_Study/UI_Implementation_HTML/박한결/05영양진단_결과.html)
+- [메인 페이지](https://1gyeolpark.github.io/Fullstack_Study/UI_Implementation_HTML/박영준/01메인페이지.html)
