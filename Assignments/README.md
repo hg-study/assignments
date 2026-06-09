@@ -97,6 +97,25 @@
 
 > 영양진단 서비스 프로그램의 ERD를 draw.io를 이용해 설계하고, 이를 SQL에 구현하여 ppt에 정리하였다.
 
-- [영양진단 sql](./05_Database_Implementation/02_nutritional_diagnosis.sql)
+- [데이터베이스 구현 sql](./05_Database_Implementation/02_nutritional_diagnosis.sql)
 
 - [데이터베이스 구현 ppt](./05_Database_Implementation/01_Database_Implementation_ppt.pdf)
+  
+
+<br>
+
+---
+
+<br>
+
+### 06_SQL_Development(SQL활용)
+
+
+##### 테이블 생성, 제약 조건
+> 제시된 테이블 사진을 보고 테이블들을 생성한 뒤 PK 제약 조건 설정, FK 제약 조건을 설정했다. 이후 테이블에 값을 넣고, 테이블들을 조건에 맞게 INNER JOIN 한 VIEW를 생성했다.
+
+##### 관계형 테이블 시나리오 서술
+> 관계형 테이블을 생성하기 위한 시나리오를 서술한다. Cart와 cart_item, product의 관계 시나리오를 서술했다.
+
+- [데이터베이스 구현 sql](./06_SQL_Development/02_SQL_Development.sql)
+- [SQL활용 ppt](./06_SQL_Development/01_SQL_Development_ppt.pdf)
