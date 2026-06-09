@@ -76,6 +76,27 @@
 ### 04_Requirements_Analysis(요구사항 확인)
 
 ##### 영양진단 서비스_요구사항 확인_ppt
-> 영양진단 서비스에 대한 프로그램 현행 시스템, 요구사항 유스케이스, 요구사항 명세서, 요구사항 시퀀스 다이어그램, API 명세서 제작 
+> 영양진단 서비스에 대한 프로그램 현행 시스템, 요구사항 유스케이스, 요구사항 명세서, 요구사항 시퀀스 다이어그램, API 명세서 제작 <br>
+> 제품 결제에 대한 요구사항 명세서, 요구사항 시퀀스를 제작했다.
 
 - [요구사항 확인 ppt](./04_Requirements_Analysis.pdf)
+
+<br>
+
+---
+
+<br>
+
+### 05_Database_Implementation(데이터베이스 구현)
+
+##### MySQL과 Workbench 설치와 환경 설정
+> OS 환경에 맞는 MySQL 을 설치하고 환경설정했다.
+
+
+##### SQL DB 생성 및 원격 계정 설정
+
+> 영양진단 서비스 프로그램의 ERD를 draw.io를 이용해 설계하고, 이를 SQL에 구현하여 ppt에 정리하였다.
+
+- [영양진단 sql](./05_Database_Implementation/02_nutritional_diagnosis.sql)
+
+- [데이터베이스 구현 ppt](./05_Database_Implementation/01_Database_Implementation_ppt.pdf)
