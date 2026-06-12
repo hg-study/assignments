@@ -168,3 +168,18 @@
 - [전체 code](./09_Network_Programming_Implementation/02_Network_Programming_Implementation_code)
 - [DBUtil code](./09_Network_Programming_Implementation/02_Network_Programming_Implementation_code/code/src/book/DBUtil.java)
 - [ChatServer code](./09_Network_Programming_Implementation/02_Network_Programming_Implementation_code/code/src/chat/ChatServer.java)
+
+<br>
+
+---
+ 
+<br>
+
+### 10_Interface_Implementation(인터페이스 구현)
+
+> 신규 사원 계정 발급 요청 인터페이스 설계서를 기반으로 미완성 프로젝트를 구현했다. IfMonitorServlet, IfRetryServlet를 맡아 구현했다.
+
+- [인터페이스 구현 ppt](./10_Interface_Implementation/01_Interface_Implementation_ppt.pdf)
+- [전체 code](./10_Interface_Implementation/02_Interface_Implementation_code)
+- [IfMonitorServlet code](./10_Interface_Implementation/02_Interface_Implementation_code/code/EX/src/monitor/IfMonitorServlet.java)
+- [IfRetryServlet code](./10_Interface_Implementation/02_Interface_Implementation_code/code/EX/src/monitor/IfRetryServlet.java)
