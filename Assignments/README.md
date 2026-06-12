@@ -128,9 +128,28 @@
 
 ### 07_Development_Environment_Management(개발 환경 운영 지원)
 
-##### 소제목
 > SourceTree, Git/Github , Eclipse를 이용하여 조원 – 조장 간 협업작업연습을 진행했다.<br>
 > 이슈에 내 feature를 연결하고 체크리스트마다 커밋 작업 진행 후 dev에 pull request를 요청하고 조원 2인의 승인 진행 후 merge를 진행했다.
 
 
 - [개발 환경 운영 지원 ppt](./07_Development_Environment_Management_ppt.pdf)
+
+<br>
+
+---
+
+<br>
+
+### 08_Programming_Language_Utilization(프로그래밍 언어 활용)
+
+> Eclipse를 활용하여 *로 삼각형, 다이아몬드를 찍어냈다.<br>
+> 클래스 다이어그램을 참고해서 사과장수 코드의 Buyer Class , Seller Class 를 구현했다.
+> 클로저를 완성해 콘솔에 출력했다.
+
+- [프로그래밍 언어 활용 ppt](./08_Programming_Language_Utilization/08_Programming_Language_Utilization_ppt.pdf)
+
+- [전체 code](./08_Programming_Language_Utilization/01_Programming_Language_Utilization_code)
+- [삼각형 code](./08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C01Star.java)
+- [다이아몬드 code](./08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C02Star.java)
+- [다이아몬드 code](./08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C02Star.java)
+- [사과장수 code](./08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C03Apple.java)
