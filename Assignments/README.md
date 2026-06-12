@@ -119,3 +119,18 @@
 
 - [데이터베이스 구현 sql](./06_SQL_Development/02_SQL_Development.sql)
 - [SQL활용 ppt](./06_SQL_Development/01_SQL_Development_ppt.pdf)
+
+<br>
+
+---
+
+<br>
+
+### 07_Development_Environment_Management(개발 환경 운영 지원)
+
+##### 소제목
+> SourceTree, Git/Github , Eclipse를 이용하여 조원 – 조장 간 협업작업연습을 진행했다.<br>
+> 이슈에 내 feature를 연결하고 체크리스트마다 커밋 작업 진행 후 dev에 pull request를 요청하고 조원 2인의 승인 진행 후 merge를 진행했다.
+
+
+- [개발 환경 운영 지원 ppt](./07_Development_Environment_Management_ppt.pdf)
