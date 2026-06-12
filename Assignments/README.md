@@ -183,3 +183,18 @@
 - [전체 code](./10_Interface_Implementation/02_Interface_Implementation_code)
 - [IfMonitorServlet code](./10_Interface_Implementation/02_Interface_Implementation_code/code/EX/src/monitor/IfMonitorServlet.java)
 - [IfRetryServlet code](./10_Interface_Implementation/02_Interface_Implementation_code/code/EX/src/monitor/IfRetryServlet.java)
+  
+<br>
+
+---
+ 
+<br>
+
+### 11_Application_Design(애플리케이션 설계)
+
+> 회원 관리 인터페이스의 미완성 프로젝트를 완성했다. 깃허브 repo를 만들어 상세 설정하고 GlobalExceptionHandler를 맡아 구현했다.
+
+- [애플리케이션 설계 ppt](./11_Application_Design/01_Application_Design_ppt.pdf)
+- [전체 code](./11_Application_Design/02_Application_Design_code)
+- [GlobalExceptionHandler code](./11_Application_Design/02_Application_Design_code/code/src/main/java/com/example/demo/Controller/GlobalException/GlobalExceptionHandler.java)
+   
