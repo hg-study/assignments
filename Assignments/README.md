@@ -197,4 +197,19 @@
 - [애플리케이션 설계 ppt](./11_Application_Design/01_Application_Design_ppt.pdf)
 - [전체 code](./11_Application_Design/02_Application_Design_code)
 - [GlobalExceptionHandler code](./11_Application_Design/02_Application_Design_code/code/src/main/java/com/example/demo/Controller/GlobalException/GlobalExceptionHandler.java)
-   
+
+<br>
+
+---
+ 
+<br>
+
+### 12_ServerProgram_Implementation(서버프로그램 구현)
+
+> 상품 관리 REST API 서버를 구현했다. REST CRUD + 트랜잭션 일괄처리(bulk) + 품절 점검 배치(@Scheduled) 를 완성했다. 
+> 깃허브를 관리하고 ProductServiceImpl, ProductServiceTest를 맡아 구현했다.
+
+- [서버프로그램 구현 ppt](./12_ServerProgram_Implementation/01_ServerProgram_Implementation_ppt.pdf)
+- [전체 code](./12_ServerProgram_Implementation/02_ServerProgram_Implementation_code)
+- [ProductServiceImpl code](./12_ServerProgram_Implementation/02_ServerProgram_Implementation_code/code/src/main/java/com/example/demo/Domain/Common/Service/ProductServiceImpl.java)
+- [ProductServiceTest code](./12_ServerProgram_Implementation/02_ServerProgram_Implementation_code/code/src/test/java/com/example/demo/ProductServiceTest.java)
