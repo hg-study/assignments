@@ -2,17 +2,19 @@
 
 
 ### 01_HTML
-> HTML 실습
+> HTML 이론&실습
 
-#### HTML
-##### 기본 이론 & 구조
+#### 기본 이론 & 구조
 - [HTML 정의 & 기본 설명 이론](./Theory/01BasicTheory.md)
-- [HTML 기본 구조 설명](./01Basic.html)
+  - [HTML 기본 구조](./01Basic.html)
 
-##### Block · Inline 요소
-- [Block · Inline 요소 & Box Model](./02Basic.html)
-##### List
-- [리스트: ul, ol, li, 중첩](./03List.html)
-- [리스트 prtc](./04Listprtc.html)
-- [엔티티(Entity)](./05Entity.html)
-- [단축 문법 Emmet](./06Emmet.html)
+#### Block · Inline 요소 & List
+- [Tag 이론](./Theory/02Tag.md)
+  - [Block · Inline 요소 & Box Model](./02Basic.html)
+  - [리스트: ul, ol, li, 중첩](./03List.html)
+  - [리스트 prtc](./04Listprtc.html)
+
+#### Entity & Emmet
+- [Entity&Emmet 이론](./Theory/Entity&Emmet.md) 
+  - [엔티티 Entity](./05Entity.html)
+  - [단축 문법 Emmet](./06Emmet.html)
