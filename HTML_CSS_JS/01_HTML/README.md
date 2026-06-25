@@ -15,6 +15,6 @@
   - [리스트 prtc](./04Listprtc.html)
 
 #### Entity & Emmet
-- [Entity&Emmet 이론](./Theory/Entity&Emmet.md) 
+- [Entity&Emmet 이론](./Theory/03Entity&Emmet.md) 
   - [엔티티 Entity](./05Entity.html)
   - [단축 문법 Emmet](./06Emmet.html)
