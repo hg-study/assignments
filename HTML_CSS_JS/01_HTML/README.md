@@ -20,7 +20,7 @@
   - [단축 문법 Emmet](./06Emmet.html)
 
 ## Table
-
+- [Table 이론](./Theory/)
   -[Table 기본&rowspan 병합](./07Table.html)
   -[Table prtc](./07Tableprtc.html)
   -[시맨틱 Table](./08Table.html)
