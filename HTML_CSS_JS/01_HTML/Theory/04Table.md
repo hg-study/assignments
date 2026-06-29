@@ -42,7 +42,7 @@
 
 <br>
 
-- 예제 코드: [rowspan 병합](../07Table.html) / [rowspan + colspan 복합 실습](../07Tableprtc.html)
+- 예제 코드: [rowspan 병합](../07Table.html) / [rowspan + colspan 복합 실습](../08Tableprtc.html)
 
 ---
 
@@ -66,7 +66,7 @@
 
 <br>
 
-- 예제 코드: [시맨틱 테이블](../08Table.html)
+- 예제 코드: [시맨틱 테이블](../09Table.html)
 
 <br>
 
