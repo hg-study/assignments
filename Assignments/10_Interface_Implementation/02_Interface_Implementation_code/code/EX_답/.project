@@ -2,12 +2,29 @@
 <projectDescription>
 	<name>IfApp_EX_Answer</name>
 	<comment>NCS 2001020212_23v6 인터페이스 구현 — [시험] EX 정답 (사원입사 → 그룹웨어 계정발급)</comment>
-	<projects></projects>
+	<projects>
+	</projects>
 	<buildSpec>
-		<buildCommand><name>org.eclipse.wst.jsdt.core.javascriptValidator</name><arguments></arguments></buildCommand>
-		<buildCommand><name>org.eclipse.jdt.core.javabuilder</name><arguments></arguments></buildCommand>
-		<buildCommand><name>org.eclipse.wst.common.project.facet.core.builder</name><arguments></arguments></buildCommand>
-		<buildCommand><name>org.eclipse.wst.validation.validationbuilder</name><arguments></arguments></buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
@@ -16,4 +33,15 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<filteredResources>
+		<filter>
+			<id>1782702956832</id>
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>
