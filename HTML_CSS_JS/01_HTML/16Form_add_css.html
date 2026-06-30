@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!--
+        =====================================================
+        회원가입 폼 페이지 (CSS스타일 적용)
+        =====================================================
+        기본 정보 / 닉네임 / 전화번호 / 생일 섹션으로 구성된 회원가입 폼에
+        카드형 레이아웃, input/select 공통 스타일, 제출 버튼 스타일을 적용한 페이지
+    -->
+
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>회원가입</h2>
+        <form action="">
+
+            <!-- === 기본 정보 (필수) === -->
+            <div class="items">
+
+                <div class="item label">
+                    <label>기본 정보</label>
+                    <span>필수 사항</span>
+                </div>
+                <div class="item">
+                    <input type="text" placeholder="이메일" />
+                </div>
+                <div class="item">
+                    <input type="password" placeholder="비밀번호" />
+                </div>
+                <div class="item">
+                    <input type="password" placeholder="비밀번호 확인" />
+                </div>
+
+            </div>
+
+            <!-- === 닉네임 (선택) === -->
+            <div class="items">
+                <div class="item label">
+                    <label>닉네임</label>
+                    <span>선택 사항</span>
+                </div>
+                <div>
+                    <input placeholder="닉네임" />
+                </div>
+                <div class="item">
+                    <input type="file" />
+                </div>
+            </div>
+
+            <!-- === 전화번호 (선택) === -->         
+            <div class="items">
+                <div class="item label">
+                    <label>전화번호</label>
+                    <span>선택 사항</span>
+                </div>
+                <div class="item phone">
+                    <select>
+                        <option value="">010</option>
+                        <option value="">011</option>
+                    </select>
+                    <input placeholder="휴대폰 번호를 입력해주세요." />
+                </div>
+            </div>
+
+            <!-- === 생일 (선택) === -->
+            <div class="items">
+                <div class="item label">
+                    <label>생일</label>
+                    <span>선택 사항</span>
+                </div>
+                <div class="item birth">
+                    <select>
+                        <option value="">1998</option>
+                        <option value="">1999</option>
+                    </select>
+                    <select>
+                        <option value="">1월</option>
+                        <option value="">2월</option>
+                    </select>
+                    <select>
+                        <option value="">1일</option>
+                        <option value="">2일</option>
+                    </select>
+                </div>
+            </div>
+
+            
+            <div>
+                <div class="items">
+                    <button class="btn btn-submit">회원가입</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
