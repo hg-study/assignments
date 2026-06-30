@@ -69,6 +69,29 @@
             cursor: pointer;   /* 마우스 올렸을 때 클릭 가능한 버튼임을 표시 */
         }
  
+        .wrapper {
+            max-width: 380px;  /* 화면이 넓어도 폼이 이 너비 이상으로 안 늘어남 */
+            width: 100%;       /* 화면이 좁으면 화면 너비에 맞춰 줄어듦 */
+ 
+            border: 1px solid;
+            margin: 0 auto;    /* 좌우 자동 마진 → 가운데 정렬 */
+            padding: 20px;
+        }
+ 
+        .wrapper>h2 {}
+ 
+        /* 오타 수정: .wrapper>form> -> .wrapper>form (자식 결합자 뒤 선택자가 비어있던 부분) */
+        .wrapper>form {
+            width: 100%;
+            /* border: 1px solid; */
+        }
+ 
+ 
+        .wrapper>form>.items {
+            width: 100%;
+            /* border: 1px solid; */
+            margin-bottom: 10px;  /* 다음 섹션(.items)과의 간격 */
+        }
  
         
 
