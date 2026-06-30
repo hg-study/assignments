@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!--
+        =====================================================
+        회원가입 폼 페이지
+        =====================================================
+        form 태그로 입력 영역을 묶고, 기본 정보 / 닉네임 / 전화번호 / 생일
+        섹션을 구성해 사용자 정보를 입력받는 페이지
+        
+    -->
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>회원가입</h2>
+
+        <!--
+            =====================================================
+            form 태그 & action 속성
+            =====================================================
+            form: 사용자 입력을 모아 서버로 전송하기 위한 영역을 정의하는 태그
+            action: 입력된 데이터를 전송할 서버 측 처리 경로(URL)를 지정하는 속성. 
+                    비워두면 현재 페이지 주소로 전송된다.
+        -->
+
+        <form action="">
+
+            <!--
+                === 기본 정보 - 이메일 / 비밀번호 (필수) ===
+                
+                label: 입력 항목의 제목을 나타내는 텍스트 요소
+                span: 줄 안에서 일부 텍스트만 따로 묶어 스타일을 적용하기 위한 인라인 요소
+ 
+                input type="text": 일반 텍스트를 입력받는 기본 입력 필드
+                input type="password": 입력값이 화면에 가려져 표시되는 입력 필드
+                placeholder: 입력 전 빈 칸에 보여주는 미리보기 텍스트
+            -->
+            
+            <div>
+
+                <div>
+                    <label>기본 정보</label>
+                    <span>필수 사항</span>
+                </div>
+                <div>
+                    <input type="text" placeholder="이메일" />
+                </div>
+                <div>
+                    <input type="password" placeholder="비밀번호" />
+                </div>
+                <div>
+                    <input type="password" placeholder="비밀번호 확인" />
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
