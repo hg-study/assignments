@@ -77,6 +77,27 @@
                 </div>
             </div>
 
+            <!--
+                === 전화번호 (선택) ===
+                select: 여러 옵션 중 하나를 고르는 드롭다운 목록을 만드는 태그
+                option: select 안에서 선택 가능한 개별 항목을 정의하는 태그
+                value: 폼 전송 시 서버로 실제 전달될 값을 지정하는 속성.
+                비워두면 선택해도 빈 값이 전송된다.
+            -->
+            <div>
+                <div>
+                    <label>전화번호</label>
+                    <span>선택 사항</span>
+                </div>
+                <div>
+                    <select>
+                        <option value="">010</option>
+                        <option value="">011</option>
+                    </select>
+                    <input placeholder="휴대폰 번호를 입력해주세요." />
+                </div>
+            </div>
+            
             </div>
 
         </form>
