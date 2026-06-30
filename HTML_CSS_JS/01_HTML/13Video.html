@@ -46,6 +46,29 @@
     </style>
 </head>
 <body>
+    <!--
+        =====================================================
+        video 태그 옵션 & MIME TYPE
+        =====================================================
+        autoplay: 자동 재생
+        muted: 음소거
+        loop: 반복 재생
+        controls: 하단 제어부 표시 여부
+ 
+        MIME TYPE: Client - Server 간 자료(보통 파일)를 교환할 때 사용되는 표준화된 식별자
+        type/subtype 형식으로 구성된다
+        type: text, image, video, application
+        subtype: html, png, mp4, pdf...
+    -->
+
+    <div class="wrapper">
+        <div class="gradient-overlay"></div>
+        <div class="bg-video">
+            <video autoplay muted loop>
+                <source src="./Videos/video.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
 
 </body>
 </html>
