@@ -65,8 +65,16 @@
 | `z-index` | 숫자 (기본값 auto)<br>값이 클수록 앞에 표시됨. position 지정 요소에만 동작<br>`z-index: 10;` | 요소의 쌓임 순서 |
 | `overflow` | **visible:** 기본값. 넘친 내용 그대로 표시<br>**hidden:** 넘친 내용 잘라 숨김<br>**scroll:** 항상 스크롤바 표시<br>**auto:** 내용이 넘칠 때만 스크롤바 표시<br>`overflow: hidden;` | 콘텐츠가 요소 밖으로 넘칠 때 처리 방식 |
 | `float` | **left:** 왼쪽으로 띄워 배치<br>**right:** 오른쪽으로 띄워 배치<br>**none:** 기본값<br>`float: left;` | 요소를 흐름에서 분리해 좌우 배치 |
+| `justify-content` | **flex-start:** 기본값. 시작점 정렬<br>**flex-end:** 끝점 정렬<br>**center:** 가운데 정렬<br>**space-between:** 양 끝 붙이고 사이 균등 분배<br>**space-around:** 요소 양옆에 균등 여백<br>`justify-content: space-between;` | `display: flex` 컨테이너의 주축(가로) 방향 정렬 |
+| `align-items` | **stretch:** 기본값. 교차축 꽉 채움<br>**center:** 교차축 가운데 정렬<br>**flex-start / flex-end:** 교차축 시작/끝 정렬<br>`align-items: center;` | flex 컨테이너의 교차축(세로) 방향 정렬 |
+| `gap` | `px` `%`<br>flex·grid 자식 요소 사이 간격을 한 번에 지정. margin과 달리 바깥쪽 끝에는 여백이 생기지 않음<br>`gap: 5px;` | flex(또는 grid) 자식 요소 사이 간격 |
+| `flex-direction` | **row:** 기본값. 가로 방향 배치<br>**column:** 세로 방향 배치<br>**row-reverse / column-reverse:** 역순 배치<br>`flex-direction: row;` | flex 컨테이너의 주축 방향 지정 |
+| `flex-wrap` | **nowrap:** 기본값. 한 줄 유지(넘치면 축소)<br>**wrap:** 공간 부족 시 다음 줄로 넘김<br>`flex-wrap: wrap;` | flex 자식 요소의 줄바꿈 허용 여부 |
+| `cursor` | **pointer:** 손가락 모양. 클릭 가능한 요소임을 표시<br>**default:** 기본 화살표<br>**not-allowed:** 금지 모양<br>`cursor: pointer;` | 마우스를 올렸을 때의 커서 모양 |
 
 <br>
+
+- 예제 코드: [회원가입 폼 Css 추가](./16Form_add_css.html)
 
 ---
 
@@ -86,6 +94,23 @@
 | `outline` | `굵기 스타일 색상` 순. border와 유사하지만 레이아웃에 영향 없음<br>`outline: 2px solid red;` | 윤곽선. 레이아웃 공간 차지 안 함 |
 
 <br>
+
+<span style="color:gray">`outline: none;`은 클릭(focus) 시 브라우저가 기본으로 그리는 테두리를 제거할 때 자주 쓰인다.</span>
+
+<br>
+
+**가상 요소(Pseudo-element)**
+
+> 실제 HTML 태그가 아니지만 특정 요소 내부의 일부분만 선택해 스타일을 적용할 수 있게 해주는 선택자다. `::`(콜론 두 개)로 시작하며 일반 선택자 뒤에 이어붙여 사용한다.
+
+| **선택자** | **설명** |
+| --- | --- |
+| `::file-selector-button` | `input[type="file"]` 내부의 "파일 선택" 버튼 부분만 선택해 스타일을 적용하는 가상 요소. <br>`input[type="file"]::file-selector-button { background-color: royalblue; }` |
+
+
+<br>
+
+- 예제 코드: [회원가입 폼 Css 추가](./16Form_add_css.html)
 
 ---
 
