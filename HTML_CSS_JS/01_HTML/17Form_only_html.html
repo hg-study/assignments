@@ -132,7 +132,7 @@
         </div>
 
         <!-- 
-            === 생년월일 === 
+            === 연/월/일 === 
             select 연도-월-일 3개로 분리
         -->
         <div>
@@ -153,6 +153,23 @@
             </select>
         </div>
         <hr/>
+
+        <!--
+            =====================================================
+            수신 동의 - checkbox & label for 연결
+            =====================================================
+            input type="checkbox": 켜기/끄기(on/off) 형태로 선택하는 입력 타입. radio와 달리 독립적으로 각각 체크 가능
+            id + label for="id": label의 for 값과 input의 id 값을 일치시켜 두 요소를 연결하는 방식.
+            연결되면 label 텍스트를 클릭해도 해당 input이 체크/포커스된다.(클릭 영역 확장)
+        -->  
+        <div>
+            <input id="email-recv" name="email_recv" type="checkbox" /> 
+            <label for="email-recv">이메일 수신에 동의합니다.</label>
+        </div>
+        <div>
+            <input id="sms-recv" name="sms_recv" type="checkbox" /> 
+            <label for="sms-recv">문자메시지 수신에 동의합니다.</label>
+        </div>
 
     </form>
 
