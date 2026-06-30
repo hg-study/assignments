@@ -80,7 +80,6 @@
  
         .wrapper>h2 {}
  
-        /* 오타 수정: .wrapper>form> -> .wrapper>form (자식 결합자 뒤 선택자가 비어있던 부분) */
         .wrapper>form {
             width: 100%;
             /* border: 1px solid; */
@@ -93,7 +92,28 @@
             margin-bottom: 10px;  /* 다음 섹션(.items)과의 간격 */
         }
  
-        
+        .wrapper>form>.items>.item {}
+ 
+        .wrapper>form>.items>.item.label {
+            display: flex;                    /* 한 줄에 배치 */
+            justify-content: space-between;   /* 좌우 양 끝으로 배치 */
+        }
+ 
+ 
+        .wrapper>form>.items>.item.phone {
+            display: flex;                    /* 한 줄에 배치 */
+            justify-content: space-between;
+            gap: 5px;                         /* 사이 간격 */
+        }
+        .wrapper>form>.items>.item.phone>select {
+            width: 166px;   /* 100% 대신 고정 너비로 줄여서 한 줄에 들어가게 함 */
+        }
+ 
+        .wrapper>form>.items>.item.birth {
+            display: flex;                    /* 한 줄에 배치 */
+            justify-content: space-between;
+            gap: 5px;
+        }
 
     </style>
 </head>
