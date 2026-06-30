@@ -20,11 +20,58 @@
             box-sizing: border-box; /* padding/border를 width/height 안쪽으로 포함시켜 계산 */
         }
 
+
         body {
-            margin: 0;
+            margin: 0;   /* 브라우저 기본 여백 제거 */
             padding: 0;
         }
+ 
+        input {
+            width: 100%;          /* 부모(.item) 너비만큼 꽉 채움 */
+            height: 40px;
+            margin-bottom: 10px;  /* 아래 요소와 간격 */
+            /* border-radius: 5px; */
+            border: 1px solid;
+            outline: none;        /* 클릭 시 생기는 기본 테두리 제거 */
+            padding-left: 10px;   /* 입력 텍스트가 테두리에 안 붙도록 좌측 여백 */
+        }
+ 
+        /* file-selector-button: input[type="file"] 내부의 "파일 선택" 버튼 부분만 선택해 스타일링하는 가상 요소 */
+        input[type="file"]::file-selector-button{
+            background-color: royalblue;  /* 버튼 배경색 */
+            height: 40px;                   /* 옆의 input 높이와 맞춤 */
+            color: white;                 /* 버튼 글자색 */
+            outline: none;
+            border: 0;                      /* 기본 버튼 테두리 제거 */
+            width: 100px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+ 
+        select {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;  /* 아래 요소와 간격 */
+            /* border-radius: 5px; */
+            border: 1px solid;
+            outline: none;            
+        }
+ 
+        .btn {
+            color: white;
+            border: 0;
+            min-height: 40px;
+        }
+ 
+        .btn-submit {
+            width: 100%;
+            background-color: royalblue;
+            cursor: pointer;   /* 마우스 올렸을 때 클릭 가능한 버튼임을 표시 */
+        }
+ 
+ 
         
+
     </style>
 </head>
 
