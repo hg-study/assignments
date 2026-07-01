@@ -38,7 +38,7 @@
 
 <br>
 
-- 예제 코드: [ATag 페이지 엥커 링크 & 고정 nev](./11ATag.html)
+- 예제 코드: [ATag 페이지 앵커 링크 & 고정 nev](../11ATag.html)
 ---
 
 ## target - 링크 열기 위치
@@ -67,7 +67,7 @@
 
 <br>
 
-- 예제 코드: [ATag 스타일 버튼, iframe 연동](./10ATag.html)
+- 예제 코드: [ATag 스타일 버튼, iframe 연동](../10ATag.html)
 
 
 ---
@@ -93,7 +93,7 @@
 
 <br>
 
-- 예제 코드: [ATag 스타일 버튼, iframe 연동](./10ATag.html)
+- 예제 코드: [ATag 스타일 버튼, iframe 연동](../10ATag.html)
 
 ---
 
@@ -120,7 +120,7 @@
 
 <br>
 
-- 예제 코드: [ATag 스타일 버튼, iframe 연동](./10ATag.html)
+- 예제 코드: [ATag 스타일 버튼, iframe 연동](../10ATag.html)
 
 ---
 
@@ -146,7 +146,7 @@
 
 <br>
 
-- 예제 코드: [ATag 스타일 버튼, iframe 연동](./10ATag.html)
+- 예제 코드: [ATag 스타일 버튼, iframe 연동](../10ATag.html)
 
 ---
 

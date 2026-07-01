@@ -31,7 +31,7 @@
 ## A Tag
 - [ATag 이론](./Theory/05ATag.md)
   - [ATag 스타일 버튼, iframe 연동](./10ATag.html)
-  - [ATag 페이지 엥커 링크 & 고정 nev](./11ATag.html)
+  - [ATag 페이지 앵커 링크 & 고정 nev](./11ATag.html)
   
 ## Img&Video
 - [Img&Video 이론](./Theory/06Img&Video.md)
