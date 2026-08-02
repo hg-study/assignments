@@ -265,7 +265,7 @@
 ### 16_DBMS_Implementation(DBMS 구축)
 
 > 공공데이터를 융합한 DBMS 구축에 대한 개인 보고서를 작성했다.
-> 코드는 강사 제공 참고 샘플(ML 모델 + Spring Boot 백엔드 + React 프론트 + Redis + Docker 전체 스택)이며, 직접 구현한 코드는 아니다.
+> 코드는 강사님 제공 참고 샘플(ML 모델 + Spring Boot 백엔드 + React 프론트 + Redis + Docker 전체 스택)이며, 직접 구현한 코드는 아니다.
 
 - [DBMS 구축 ppt](./Assignments/16_DBMS_Implementation/01_DBMS_Implementation_ppt.pdf)
 - [참고 샘플 code](./Assignments/16_DBMS_Implementation/02_DBMS_Implementation_code/code)
