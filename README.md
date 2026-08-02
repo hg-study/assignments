@@ -254,4 +254,16 @@
 - [애플리케이션 배포 ppt](./Assignments/15_Application_Deployment/01_Application_Deployment_ppt.pdf)
 - [전체 code](./Assignments/15_Application_Deployment/02_Application_Deployment_code/code)
 - [HealthController code](./Assignments/15_Application_Deployment/02_Application_Deployment_code/code/src/main/java/com/example/demo/Controller/HealthController.java)
+
+<br>
+
+---
+
+<br>
+
+### 16_DBMS_Implementation(DBMS 구축)
+
+> 공공데이터를 융합한 DBMS 구축에 대한 개인 보고서를 작성했다.
+
+- [DBMS 구축 ppt](./Assignments/16_DBMS_Implementation/01_DBMS_Implementation_ppt.pdf)
 - [BookRepositoryTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/BookRepositoryTest.java)
