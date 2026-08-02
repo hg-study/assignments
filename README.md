@@ -238,4 +238,20 @@
 - [애플리케이션 테스트 수행 ppt](./Assignments/14_Application_Testing/01_Application_Testing_ppt.pdf)
 - [전체 code](./Assignments/14_Application_Testing/02_Application_Testing_code/code)
 - [LibraryIntegrationTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/LibraryIntegrationTest.java)
+
+<br>
+
+---
+
+<br>
+
+### 15_Application_Deployment(애플리케이션 배포)
+
+> Spring Boot 앱을 빌드 → 실행 → 헬스체크 → 롤백까지 이어지는 배포 파이프라인으로 구성했다.
+> HealthController/Actuator 헬스체크, dev/prod 프로파일 분리, 빌드·실행·롤백 스크립트(build.sh/run.sh/rollback.sh)를 완성했다.
+> GitHub를 관리했다.
+
+- [애플리케이션 배포 ppt](./Assignments/15_Application_Deployment/01_Application_Deployment_ppt.pdf)
+- [전체 code](./Assignments/15_Application_Deployment/02_Application_Deployment_code/code)
+- [HealthController code](./Assignments/15_Application_Deployment/02_Application_Deployment_code/code/src/main/java/com/example/demo/Controller/HealthController.java)
 - [BookRepositoryTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/BookRepositoryTest.java)
