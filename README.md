@@ -238,6 +238,7 @@
 - [애플리케이션 테스트 수행 ppt](./Assignments/14_Application_Testing/01_Application_Testing_ppt.pdf)
 - [전체 code](./Assignments/14_Application_Testing/02_Application_Testing_code/code)
 - [LibraryIntegrationTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/LibraryIntegrationTest.java)
+- [BookRepositoryTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/BookRepositoryTest.java)
 
 <br>
 
@@ -264,6 +265,7 @@
 ### 16_DBMS_Implementation(DBMS 구축)
 
 > 공공데이터를 융합한 DBMS 구축에 대한 개인 보고서를 작성했다.
+> 코드는 강사 제공 참고 샘플(ML 모델 + Spring Boot 백엔드 + React 프론트 + Redis + Docker 전체 스택)이며, 직접 구현한 코드는 아니다.
 
 - [DBMS 구축 ppt](./Assignments/16_DBMS_Implementation/01_DBMS_Implementation_ppt.pdf)
-- [BookRepositoryTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/BookRepositoryTest.java)
+- [참고 샘플 code](./Assignments/16_DBMS_Implementation/02_DBMS_Implementation_code/code)
