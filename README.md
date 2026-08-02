@@ -206,3 +206,19 @@
 - [전체 code](./Assignments/12_ServerProgram_Implementation/02_ServerProgram_Implementation_code/code/src/main/java/com/example/demo/Domain/Common/Service/ProductServiceImpl.java)
 - [ProductServiceImpl code](./Assignments/12_ServerProgram_Implementation/02_ServerProgram_Implementation_code/)
 - [ProductServiceTest code](./Assignments/12_ServerProgram_Implementation/02_ServerProgram_Implementation_code/code/src/test/java/com/example/demo/ProductServiceTest.java)
+
+<br>
+
+---
+
+<br>
+
+### 13_Integration_Implementation(통합 구현)
+
+> 외부 OpenAPI(S-Link)를 연계해 데이터를 수신하고 DTO로 변환해 DB에 저장, REST API로 재제공하며 `@Scheduled` 배치로 주기 동기화하는 기능을 구현했다.
+> 조장을 맡아 프로젝트를 총괄했고, PostDTO의 Entity ↔ DTO 변환과 LinkScheduler(배치 동기화), 결과 검증을 구현했다.
+
+- [통합 구현 ppt](./Assignments/13_Integration_Implementation/01_Integration_Implementation_ppt.pdf)
+- [전체 code](./Assignments/13_Integration_Implementation/02_Integration_Implementation_code/code)
+- [LinkScheduler code](./Assignments/13_Integration_Implementation/02_Integration_Implementation_code/code/src/main/java/com/example/demo/Scheduled/LinkScheduler.java)
+- [PostDTO code](./Assignments/13_Integration_Implementation/02_Integration_Implementation_code/code/src/main/java/com/example/demo/Domain/Common/Dtos/PostDTO.java)
