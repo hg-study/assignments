@@ -222,3 +222,20 @@
 - [전체 code](./Assignments/13_Integration_Implementation/02_Integration_Implementation_code/code)
 - [LinkScheduler code](./Assignments/13_Integration_Implementation/02_Integration_Implementation_code/code/src/main/java/com/example/demo/Scheduled/LinkScheduler.java)
 - [PostDTO code](./Assignments/13_Integration_Implementation/02_Integration_Implementation_code/code/src/main/java/com/example/demo/Domain/Common/Dtos/PostDTO.java)
+
+<br>
+
+---
+
+<br>
+
+### 14_Application_Testing(애플리케이션 테스트 수행)
+
+> 도서 대출(S-Library) 서비스의 단위·슬라이스·통합 테스트(JUnit5, Mockito, `@WebMvcTest`, `@SpringBootTest`)를 작성했다.
+> 재고 0 대출 방지, 미존재 도서 예외, 중복 반납 차단, 연체 판정 오류 등 결함 4건을 찾아 수정해 전체 테스트를 통과시켰다.
+> GitHub를 관리하고 재고 조회·도서 대출 API 통합 테스트와 ISBN 조회·존재 검증 테스트를 구현했다.
+
+- [애플리케이션 테스트 수행 ppt](./Assignments/14_Application_Testing/01_Application_Testing_ppt.pdf)
+- [전체 code](./Assignments/14_Application_Testing/02_Application_Testing_code/code)
+- [LibraryIntegrationTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/LibraryIntegrationTest.java)
+- [BookRepositoryTest code](./Assignments/14_Application_Testing/02_Application_Testing_code/code/src/test/java/com/example/demo/BookRepositoryTest.java)
