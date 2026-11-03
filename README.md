@@ -96,7 +96,7 @@
 ##### SQL DB 생성 및 원격 계정 설정
 > 영양진단 서비스 프로그램의 ERD를 draw.io를 이용해 설계하고, 이를 SQL에 구현하여 ppt에 정리하였다.
 
-- [데이터베이스 구현 sql](./Assignments/05_Database_Implementation/02_nutritional_diagnosis.sql)
+- [데이터베이스 구현 sql](./Assignments/05_Database_Implementation/02_Database_Implementation.sql)
 - [데이터베이스 구현 ppt](./Assignments/05_Database_Implementation/01_Database_Implementation_ppt.pdf)
 
 <br>
@@ -141,11 +141,11 @@
 > 클래스 다이어그램을 참고해서 사과장수 코드의 Buyer Class, Seller Class를 구현했다.
 > 클로저를 완성해 콘솔에 출력했다.
 
-- [프로그래밍 언어 활용 ppt](./Assignments/08_Programming_Language_Utilization/01_Programming_Language_Utilization_ppt.pdf)
-- [전체 code](./Assignments/08_Programming_Language_Utilization/02_Programming_Language_Utilization_code)
-- [삼각형 code](./Assignments/08_Programming_Language_Utilization/02_Programming_Language_Utilization_code/BN/code/src/C0/C01Star.java)
-- [다이아몬드 code](./Assignments/08_Programming_Language_Utilization/02_Programming_Language_Utilization_code/BN/code/src/C0/C02Star.java)
-- [사과장수 code](./Assignments/08_Programming_Language_Utilization/02_Programming_Language_Utilization_code/BN/code/src/C0/C03Apple.java)
+- [프로그래밍 언어 활용 ppt](./Assignments/08_Programming_Language_Utilization/08_Programming_Language_Utilization_ppt.pdf)
+- [전체 code](./Assignments/08_Programming_Language_Utilization/01_Programming_Language_Utilization_code)
+- [삼각형 code](./Assignments/08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C01Star.java)
+- [다이아몬드 code](./Assignments/08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C02Star.java)
+- [사과장수 code](./Assignments/08_Programming_Language_Utilization/01_Programming_Language_Utilization_code/BN/code/src/C0/C03Apple.java)
 
 <br>
 
